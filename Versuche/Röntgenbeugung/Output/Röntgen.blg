@@ -1,9 +1,9 @@
-[1] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:307> INFO - This is Biber 2.19
 [1] Config.pm:310> INFO - Logfile is 'Röntgen.blg'
-[361] biber-MSWIN64:340> INFO - === 
-[467] Biber.pm:419> INFO - Reading 'Röntgen.bcf'
-[896] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
-[947] bbl.pm:660> INFO - Writing 'Röntgen.bbl' with encoding 'UTF-8'
-[947] bbl.pm:763> INFO - Output to Röntgen.bbl
-[948] Biber.pm:131> WARN - The file 'Röntgen.bcf' does not contain any citations!
-[949] Biber.pm:133> INFO - WARNINGS: 1
+[618] biber-MSWIN64:340> INFO - === 
+[977] Biber.pm:419> INFO - Reading 'Röntgen.bcf'
+[1445] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
+[1558] bbl.pm:660> INFO - Writing 'Röntgen.bbl' with encoding 'UTF-8'
+[1558] bbl.pm:763> INFO - Output to Röntgen.bbl
+[1559] Biber.pm:131> WARN - The file 'Röntgen.bcf' does not contain any citations!
+[1559] Biber.pm:133> INFO - WARNINGS: 1

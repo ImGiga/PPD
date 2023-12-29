@@ -1,11 +1,11 @@
 # Fdb version 4
-["biber Röntgen"] 1703854520 "Röntgen.bcf" "Röntgen.bbl" "Röntgen" 1703854541 0
-  "Röntgen.bcf" 1703854539 107087 212d780bd6a91393a3bb9acd85e6724e "pdflatex"
+["biber Röntgen"] 1703856917 "Röntgen.bcf" "Röntgen.bbl" "Röntgen" 1703856950 0
+  "Röntgen.bcf" 1703856948 107087 212d780bd6a91393a3bb9acd85e6724e "pdflatex"
   (generated)
   "Röntgen.bbl"
   "Röntgen.blg"
   (rewritten before read)
-["pdflatex"] 1703854534 "c:/Users/toni-/OneDrive/Alt/Desktop/Praktikum - Übertrag/PPD/Versuche/Röntgenbeugung/Output/Röntgen.tex" "Röntgen.pdf" "Röntgen" 1703854541 0
+["pdflatex"] 1703856943 "c:/Users/toni-/OneDrive/Alt/Desktop/Praktikum - Übertrag/PPD/Versuche/Röntgenbeugung/Output/Röntgen.tex" "Röntgen.pdf" "Röntgen" 1703856950 0
   "../Bilder/LogoUniBayreuth.png" 1691400943 49762 489ce8348f25b7b49452bce1ac5433d3 ""
   "../Input/A1.tex" 1703853466 0 d41d8cd98f00b204e9800998ecf8427e ""
   "../Input/Aufbau.tex" 1703853392 89 397b265ad2198a4af2f8bd24e788570c ""
@@ -173,13 +173,13 @@
   "C:/Users/toni-/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "C:/Users/toni-/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656233290 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/toni-/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656233319 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "Röntgen.aux" 1703854539 1850 453f3726339f41182a554ae39ff28b94 "pdflatex"
-  "Röntgen.bbl" 1703854527 486 ee04f40f768daeed26442158e95aba61 "biber Röntgen"
-  "Röntgen.out" 1703854539 720 b2879151ed10fc202029215dd045f45a "pdflatex"
-  "Röntgen.run.xml" 1703854539 2409 3896822965fc21833ac41b1176367e45 "pdflatex"
-  "Röntgen.tex" 1703854510 4697 fae2f3c0af2702a987ea5c7cb8eb0508 ""
-  "Röntgen.toc" 1703854539 463 5aab35aee5fcf2d1ac345a8a67ed82e1 "pdflatex"
-  "c:/Users/toni-/OneDrive/Alt/Desktop/Praktikum - Übertrag/PPD/Versuche/Röntgenbeugung/Output/Röntgen.tex" 1703854510 4697 fae2f3c0af2702a987ea5c7cb8eb0508 ""
+  "Röntgen.aux" 1703856948 1850 453f3726339f41182a554ae39ff28b94 "pdflatex"
+  "Röntgen.bbl" 1703856935 486 ee04f40f768daeed26442158e95aba61 "biber Röntgen"
+  "Röntgen.out" 1703856948 720 b2879151ed10fc202029215dd045f45a "pdflatex"
+  "Röntgen.run.xml" 1703856948 2409 3896822965fc21833ac41b1176367e45 "pdflatex"
+  "Röntgen.tex" 1703856899 4697 fae2f3c0af2702a987ea5c7cb8eb0508 ""
+  "Röntgen.toc" 1703856948 463 5aab35aee5fcf2d1ac345a8a67ed82e1 "pdflatex"
+  "c:/Users/toni-/OneDrive/Alt/Desktop/Praktikum - Übertrag/PPD/Versuche/Röntgenbeugung/Output/Röntgen.tex" 1703856899 4697 fae2f3c0af2702a987ea5c7cb8eb0508 ""
   (generated)
   "Röntgen.aux"
   "Röntgen.bcf"
