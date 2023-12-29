@@ -1,11 +1,11 @@
 # Fdb version 4
-["biber UltraKurzZeitPhysik"] 1703853220 "UltraKurzZeitPhysik.bcf" "UltraKurzZeitPhysik.bbl" "UltraKurzZeitPhysik" 1703853545 0
-  "UltraKurzZeitPhysik.bcf" 1703853544 107087 212d780bd6a91393a3bb9acd85e6724e "pdflatex"
+["biber UltraKurzZeitPhysik"] 1703857445 "UltraKurzZeitPhysik.bcf" "UltraKurzZeitPhysik.bbl" "UltraKurzZeitPhysik" 1703857478 0
+  "UltraKurzZeitPhysik.bcf" 1703857476 107087 212d780bd6a91393a3bb9acd85e6724e "pdflatex"
   (generated)
   "UltraKurzZeitPhysik.bbl"
   "UltraKurzZeitPhysik.blg"
   (rewritten before read)
-["pdflatex"] 1703853538 "c:/Users/toni-/OneDrive/Alt/Desktop/Praktikum - Übertrag/PPD/Versuche/UltraKurzZeitPhysik/Output/UltraKurzZeitPhysik.tex" "UltraKurzZeitPhysik.pdf" "UltraKurzZeitPhysik" 1703853545 0
+["pdflatex"] 1703857471 "c:/Users/toni-/OneDrive/Alt/Desktop/Praktikum - Übertrag/PPD/Versuche/UltraKurzZeitPhysik/Output/UltraKurzZeitPhysik.tex" "UltraKurzZeitPhysik.pdf" "UltraKurzZeitPhysik" 1703857478 0
   "../Bilder/LogoUniBayreuth.png" 1691400943 49762 489ce8348f25b7b49452bce1ac5433d3 ""
   "../Input/A1.tex" 1703853466 0 d41d8cd98f00b204e9800998ecf8427e ""
   "../Input/Aufbau.tex" 1703853392 89 397b265ad2198a4af2f8bd24e788570c ""
@@ -13,7 +13,6 @@
   "../Input/Einleitung.tex" 1703852015 42 7f49bb32e9863eb34398667b3e80fd16 ""
   "../Input/FZV.tex" 1703853211 72 381c4f058661a8dad5719764e797b014 ""
   "../Input/FZV1.tex" 1703852420 32 c9a15453bc5b484f1b042d665aef4bd0 ""
-  "../Input/Fazit.tex" 1703853497 32 7f5a2a992e6d1e6a9dacb390b4f1c58f ""
   "C:/Users/toni-/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1703853007 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/toni-/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1691940895 25420 295b26ce7e69196e31bb72e288f684c6 ""
   "C:/Users/toni-/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1691940910 31952 82e30f152ee5e9ec9b4270ae0a5d278a ""
@@ -173,13 +172,13 @@
   "C:/Users/toni-/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "C:/Users/toni-/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656233290 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/toni-/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656233319 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "UltraKurzZeitPhysik.aux" 1703853543 1850 453f3726339f41182a554ae39ff28b94 "pdflatex"
-  "UltraKurzZeitPhysik.bbl" 1703853227 486 ee04f40f768daeed26442158e95aba61 "biber UltraKurzZeitPhysik"
-  "UltraKurzZeitPhysik.out" 1703853544 720 b2879151ed10fc202029215dd045f45a "pdflatex"
-  "UltraKurzZeitPhysik.run.xml" 1703853544 2486 78faef951a586128fe9a4a4bcf2d77a7 "pdflatex"
-  "UltraKurzZeitPhysik.tex" 1703853529 4722 74ea94a0b6c8d47ab89e3b337cfc3dc9 ""
-  "UltraKurzZeitPhysik.toc" 1703853544 463 5aab35aee5fcf2d1ac345a8a67ed82e1 "pdflatex"
-  "c:/Users/toni-/OneDrive/Alt/Desktop/Praktikum - Übertrag/PPD/Versuche/UltraKurzZeitPhysik/Output/UltraKurzZeitPhysik.tex" 1703853529 4722 74ea94a0b6c8d47ab89e3b337cfc3dc9 ""
+  "UltraKurzZeitPhysik.aux" 1703857476 1699 009b515a1e47c87e3e49adcc379da409 "pdflatex"
+  "UltraKurzZeitPhysik.bbl" 1703857464 486 ee04f40f768daeed26442158e95aba61 "biber UltraKurzZeitPhysik"
+  "UltraKurzZeitPhysik.out" 1703857476 652 1252d8156a1f3cd496f972ab1fad3570 "pdflatex"
+  "UltraKurzZeitPhysik.run.xml" 1703857476 2486 78faef951a586128fe9a4a4bcf2d77a7 "pdflatex"
+  "UltraKurzZeitPhysik.tex" 1703857392 4726 cdfe7c2baa5170462a2a1bfcc4d6fc67 ""
+  "UltraKurzZeitPhysik.toc" 1703857476 402 95e53dfeffa81eb7dbcc3b4802a30ae6 "pdflatex"
+  "c:/Users/toni-/OneDrive/Alt/Desktop/Praktikum - Übertrag/PPD/Versuche/UltraKurzZeitPhysik/Output/UltraKurzZeitPhysik.tex" 1703857392 4726 cdfe7c2baa5170462a2a1bfcc4d6fc67 ""
   (generated)
   "UltraKurzZeitPhysik.aux"
   "UltraKurzZeitPhysik.bcf"
