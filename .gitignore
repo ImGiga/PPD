@@ -4,3 +4,9 @@
 *.bcf
 *.blg
 **/Output/*.pdf
+*.fdb_latexmk
+*.fls
+*.out
+*.xml
+*.gz
+*.toc
