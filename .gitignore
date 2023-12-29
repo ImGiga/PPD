@@ -350,22 +350,13 @@ MigrationBackup/
 .ionide/
 
 # Ignor Tensorboard
-
-SavedModels/
-
-OldEnvironment/
-SavedModels-X/
-P-SavedModels/
-PerformanceData/
-0-SavedModels-EXT/
-
-Projekt-Code/WorkEnv/Extensions/Vector/Data/data/validation_data.npy
-Projekt-Code/WorkEnv/Extensions/Vector/Data/data/validation_data_all.npy
-Projekt-Code/WorkEnv/Extensions/Vector/Data/data/train_data.npy
-Projekt-Code/WorkEnv/Extensions/Vector/Data/data/train_data_all.npy
-Projekt-Code/WorkEnv/Extensions/Vector/Data/data/test_data.npy
-Projekt-Code/WorkEnv/Extensions/Vector/Data/data/test_data_fext.npy
-Projekt-Code/WorkEnv/Extensions/Vector/Data/data/test_data_all.npy
-Projekt-Code/WorkEnv/CodeFiles/Old/train_input_1D.npy
-Projekt-Code/WorkEnv/Extensions/For_Git_Hub/Codes/All-Simulation-Data.npy
-*.zip
+*.aux
+*.bbl 
+*.bcf 
+*.fdb_latexmk 
+*./Output/*.pdf
+*.fls 
+*.out
+*.xml 
+*.gz 
+*.toc 
