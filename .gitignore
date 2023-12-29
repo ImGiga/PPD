@@ -1,1 +1,6 @@
+*.log
+*.aux
 *.bbl
+*.bcf
+*.blg
+**/Output/*.pdf
