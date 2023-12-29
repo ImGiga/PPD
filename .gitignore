@@ -350,8 +350,8 @@ MigrationBackup/
 .ionide/
 
 # Ignor Tensorboard
-*.aux
-*.bbl 
+.aux
+**.bbl 
 *.bcf 
 *.fdb_latexmk 
 *./Output/*.pdf
