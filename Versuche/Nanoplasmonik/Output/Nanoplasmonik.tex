@@ -1,0 +1,157 @@
+\documentclass{article}               % paper=a4,bibliography=totoc,numbers=noenddot,fontsize=11pt
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm]{geometry}
+\usepackage[inline]{enumitem}
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1, utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amstext}
+% \usepackage{ulem}   % underline: https://www.namsu.de/Extra/pakete/Ulem.html
+\usepackage{verbatim}   % no translation of Latex-Code: http://www.weinelt.de/latex/verbatim.html 
+\usepackage{placeins}   % FloatBarrier to separate Sections: https://golatex.de/wiki/placeins  
+% \usepackage{xcolor,import}  % colored boxes: https://www.namsu.de/Extra/pakete/Xcolor.html 
+\usepackage{csquotes}   % correct quoting: https://tex.stackexchange.com/questions/39285/whats-the-advantage-of-using-csquotes-over-using-an-editors-auto-replacement-f  
+\usepackage{nicefrac}   % \nicefrac{a}{b} >>> a/b
+\usepackage{icomma}
+\usepackage[format=plain]{caption}
+% \usepackage{svg}
+\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage{caption}
+\usepackage[export]{adjustbox}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage[style=numeric-comp, natbib, backend=biber, backref=true, sorting=none, maxbibnames=99]{biblatex}
+% \DeclareFieldFormat
+%   [article,inbook,incollection,inproceedings,patent,thesis,
+%    unpublished,techreport,misc,book]
+%   {title}{\mkbibquote{#1}}
+% \DeclareFieldFormat{apacase}{#1}
+% \DeclareLanguageMapping{american}{american-apa}
+
+\newcounter{myitemcounter}
+
+\newcommand{\myitemlabel}{$\bullet$\ }
+
+\newcommand{\myitem}{%
+\stepcounter{myitemcounter}
+\myitemlabel
+}
+
+\newcommand{\anitem}[1]{%
+\myitem #1 &
+}
+
+\newcommand{\lastitem}[1]{%
+\myitem #1 \\
+}
+
+\newenvironment{inlineitemize}
+{\setcounter{myitemcounter}{0}
+\begin{center} 
+\begin{tabular}{llll} % you won't want more columns
+}
+{\end{tabular}
+\end{center}}
+
+\newenvironment{inlineenumerate}
+{\setcounter{myitemcounter}{0}
+\renewcommand{\myitemlabel}{(\alph{myitemcounter})\ }
+\begin{tabular}{lllllllllll}
+}
+{\end{tabular}}
+
+
+\ExecuteBibliographyOptions{doi=false}
+\ExecuteBibliographyOptions{doi=false}
+\DeclareFieldFormat{doilink}{%
+\iffieldundef{doi}{#1}%
+{\href{\thefield{doi}}{#1}}}
+
+\DeclareBibliographyDriver{article}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/translator+others}%
+  \setunit{\labelnamepunct}\newblock
+  \usebibmacro{title}%
+  \newunit
+  \printlist{language}%
+  \newunit\newblock
+  \usebibmacro{byauthor}%
+  \newunit\newblock
+  \usebibmacro{bytranslator+others}%
+  \newunit\newblock
+  \printfield{version}%
+  \newunit\newblock
+  \usebibmacro{in:}%
+  \printtext[doilink]{%
+  \usebibmacro{journal+issuetitle}%
+  \newunit
+  \usebibmacro{byeditor+others}%
+  \newunit
+  \usebibmacro{note+pages}%
+  }%
+  \newunit\newblock
+  \iftoggle{bbx:isbn}
+    {\printfield{issn}}
+    {}%
+  \newunit\newblock
+  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \usebibmacro{finentry}}
+
+\graphicspath{{../Bilder}}
+\bibliography{MasterThesis}
+\DeclareUnicodeCharacter{2212}{-}
+\begin{document}
+  \setlength{\parindent}{0em}
+    \begin{titlepage}
+        \centering
+        \includegraphics[width=11cm,height=3.5cm,angle=0]{LogoUniBayreuth.png}
+        \vspace{0.5cm}
+        {\large \textbf{\\Universität Bayreuth\\Physikalisches Institut\\Physikalisches Praktikum PPD}\\}
+        \vspace{2.5cm}
+        {\Huge \textbf{Nanoplasmonik}\\}
+        \vspace{2.5cm}
+        {\LARGE \textbf{Ausarbeitung - Gruppe 1}\\}
+        \vspace{0.5cm}
+        {\large \textbf{von}\\}
+        {\LARGE \textbf{Max Gießübel}\\}
+        {\LARGE \textbf{Toni Zimmermann}\\} 	
+        \vspace{2cm}
+        {\large \textbf{Versuchstermin: 01.01.2023}\\}
+        {\large \textbf{Abgabetermin: 10.01.2023}\\}
+        \vspace{2cm}
+        {\large \textbf{Betreuerin\\}}
+        {\LARGE \textbf{Jana Sanchayeeta\\}}
+        \vfill
+    \end{titlepage}
+    
+    \tableofcontents
+    \newpage
+    
+    \input{../Input/Einleitung}
+    \newpage
+    \input{../Input/FZV}
+    \newpage
+    \input{../Input/Aufbau}
+    \newpage
+    \input{../Input/Auswertung}
+    \newpage
+    \input{../Input/Fazit}
+    \newpage
+    % \appendix
+    % \numberwithin{equation}{section}
+    % \input{Input/}
+    % \newpage
+    \printbibliography
+\end{document}
