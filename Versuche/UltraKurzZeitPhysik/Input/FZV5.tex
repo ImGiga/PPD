@@ -1,0 +1,28 @@
+\subsection{\label{subsec:FZV5}Frage 5}
+\textbf{\textit{Wie verändert eine kleinere Schrittweite die spektrale Auflösung einer THz-TDSMessung?}}\\
+$\rightarrow$Um eine beliebig genaue Rekonstruktion des Signals zu sichern 
+müssen nach dem Nyquist-Shannon-Abtasttheorem die auftauchenden Signalfrequenzen 
+unterhalb einer gewissen Grenzfrequenz $f_{\text{Ny}}$ liegen, die durch die 
+Abtastfrequenz $f_\text{sample}$ wie folgt beeinflusst wird
+\begin{equation}
+    f_{\text{Ny}} = \frac{1}{2}f_\text{sample}.
+\end{equation}
+Die Abtastfrequenz wird bei unserer Messung von der Motorschrittweite $\Delta l$ des variablen 
+Interferrometerarms vorgegeben. Es gilt
+\begin{equation}
+    f_\text{sample} = \frac{1}{\Delta t} = \frac{c}{\Delta s} = \frac{c}{2\Delta l},
+\end{equation}
+woraus folgt, dass eine kleinere Schrittweite die spektrale Auflösung der THz-TDSMessung
+verbessert. \\
+
+\textbf{\textit{Was versteht man unter \glqq Zero-Padding\grqq{}?}}\\
+$\rightarrow$Da wir mit diskreten Messungen arbeiten, werden die Signale über eine
+diskrete Fourier-Transformation (DFT) in den reziproken Raum transformiert. 
+Beim Zero-Padding werden schlichtweg Nullen am Ende eines zeitabhängigen Signals ergänzt, 
+um dessen Länge zu erweitern. Zum einen kann das Signal dadurch auf eine Zweierpotenz-Anzahl 
+von Messdaten ergänzt werden, was die Anwendungen eines schnellen DFT-Algorithmusses, der 
+FFT (fast Fourier transform), erlaubt. Zum anderen erhöht sich damit die Anzahl an diskreten Punkten, 
+die der Anzahl an Auflösungspunkten im Fourierraum entsprechen.
+Hierdurch lassen sich eng liegende Signalfrequenzen besser voneinander lösgelöst darstellen und die 
+Auflösung verbessert sich. 
+

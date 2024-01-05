@@ -1,0 +1,23 @@
+\subsection{\label{subsec:FZV6}Frage 6}
+\textbf{\textit{Die Ausbreitungsgeschwindigkeit des THz-Pulses in Silizium ist langsamer als in
+Luft. D.h. der THz-Puls wird in einer THz-TDS-Messung später aufgezeichnet,
+wenn er durch 380 $\mathbf{\mu}$m dickes Silizium propagiert. Berechnen Sie diese zeitliche
+Verzögerung. Welchen Brechungsindex müssen Sie für Silizium annehmen?}}\\
+$\rightarrow$Da sich der THz-Puls aus mehreren Frequenzkomponenten zusammensetzt, wird 
+die Ausbreitungsgeschwindigkeit nicht über die Phasengeschwindigkeit (Bewegung der Phasenfront)
+sondern über die Gruppengeschwindigkeit (Energie- und Informationstransport) definiert,
+für welche gilt
+\begin{align}
+    v_{\text{g}} &= \frac{d\omega}{dk} = \frac{d(ck/n(k))}{dk} \\
+    &= \frac{c}{n(k_{0})} - \frac{ck}{n(k_{0})^{2}}\frac{\partial n}{\partial k} \\
+    &= \frac{c}{n(k_{0})}\left(1 - \frac{k}{n(k_{0})}\frac{\partial n}{\partial k}\right).
+\end{align}
+Innerhalb des betrachteten THz-Bereichs ändert sich der Brechungsindex von Silizium nahezu nicht und kann 
+daher als konstant angenommen werden ($\frac{\partial n}{\partial k}\approx0$) [REF Q9].
+Für unsere Berechnungen nehmen wir $n_{\text{Si}} = \sqrt{\epsilon_{\infty}} = 3,4175$ an [REF - WERT n SI].
+Die zeitliche Verzögerung des Pulses berechnet sich daher wie folgt
+\begin{align}
+    \Delta t &= t_{\text{Si}} - t_{\text{Luft}} \\
+    &= \frac{d}{c}(n_{\text{Si}}-n_{\text{Luft}}) \\
+    \Rightarrow \Aboxed{\Delta t \approx ABC\,\si{ps}}.
+\end{align}
