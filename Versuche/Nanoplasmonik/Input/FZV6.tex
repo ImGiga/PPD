@@ -2,5 +2,18 @@
 \textbf{\textit{Im Versuch wird zusätzlich zum hintergrundfreien Streuspektrum der Partikel auch
 noch das Lampenspektrum der Beleuchtungseinheit, sowie ein Spektrum ohne Beleuchtung
 aufgenommen. Wie müssen diese drei Spektren miteinander verrechnet
-werden, um ein hintergrundkorrigiertes Dunkelfeldspektrum zu erhalten?}}
-$\rightarrow$
+werden, um ein hintergrundkorrigiertes Dunkelfeldspektrum zu erhalten?}} \\
+$\rightarrow$Es gibt zwei mögliche Ansätze zur Berechnung des hintergrundkorrigierten Dunkelfeldspektrums \cite{FZV5}.
+Der subtraktive Ansatz zieht die Hintergrundsignale vom gemessenen Probenspektrum ab, wodurch 
+absolute Intensitätsinformation erhalten bleibt. Der divisive Ansatz wird gewählt um 
+Schwankungen im Hintergrundsignal oder im Lampenspektrum zu berücksichtigen, da eine normalisierte 
+Intensität errechnet wird.
+Da in unserem Versuch keine Information über die absolute Intensität notwendig ist und 
+Schwankungen in der Belichtungsquelle durchaus möglich sind, wählen wir folgenden Ansatz
+\begin{equation}
+    \fbox{$I_{\text{K}} = \frac{I_{\text{P}}-I_{\text{D}}}{I_{\text{L}}-I_{\text{D}}}$},
+\end{equation}
+wobei $I_{\text{K}}$ das korrigierte Spektrum (in arb.~units) ist, $I_{\text{P}}$ dem gemessenen Probenspektrum entspricht 
+und $I_{\text{L}}$ bzw.~$I_{\text{D}}$ die Intensität des Spektrums mit bzw.~ohne Beleuchtung angibt.
+Es werden Lampen- und Probenspektrum daher zunächst vom konstanten Hintergrundsignal bereinigt und der 
+Einfluss des variierenden Lampenspektrums aus der Messung heraus geteilt.  
