@@ -6,21 +6,60 @@ vorliegen. Geben Sie die Koordinaten dieser äquivalenten Gitterpunkte
 pro Elementarzelle an.}}\\
 $\rightarrow$Ein zentriertes Gitter ist ein Kristallgitter, bei dem zusätzlich zu den Gitterpunkten an den Ecken 
 der Elementarzelle (primitives Gitter) noch weitere Gitterpunkte im Inneren der Zelle vorhanden sind. 
-Man unterscheidet zwischen basis-, flächen- oder raumzentrierten Gittern. 
-Im Fall der Basis- und Raumzentrierung wird der Elementarzelle ein Gitterpunkt hinzugefügt, wobei je ein halber auf 
-Ober- und Unterseite bei 
-Basis- bzw. im Zentrum der Zelle bei Raumzentrierung hinzukommt.
-Für flächenzentrierte Gitter steigt die Gitterpunktzahl auf 4, wobei im Zentrum der sechs Außenflächen je ein halber 
-Punkt beiträgt. \\ 
-Die Koordinatenangaben sind in Abb.~\ref{fig:orth} dargestellt, wo wir orthorhombische Kristallsysteme betrachten, 
-da diese im Gegensatz zu kubischen Systemen alle Zentrierungen aufweisen. Der Übergang zum kubischen System geschieht 
-durch Gleichsetzten der Kantenlängen ($a=b=c$).
-\begin{figure}[h!]
+Man unterscheidet zwischen basis-, flächen- oder raumzentrierten Gittern und der rhomboedrischen Zelle. 
+Bei der Basis- und Raumzentrierung wird der Elementarzelle jeweils ein Gitterpunkt hinzugefügt. 
+Dabei wird ein halber Punkt auf gegenüberliegenden Seitenflächen in der Basiszentrierung eingefügt, während 
+der zusätzliche Punkt im Zentrum der Zelle bei Raumzentrierung liegt. 
+In der rhomboedrischen Elementarzelle steigt die Gitterpunktzahl auf drei und für flächenzentrierte Gitter auf vier, 
+wobei im Zentrum der sechs Außenflächen je ein halber Punkt beiträgt \cite{Schwarz, EPC}. \\ 
+Die Koordinaten bezogen auf die durch $u,v,w$ definierten Gitterpunkte aus Gl.~\ref{eq:position} sind in Tab.~\ref{tab:zent} 
+aufgelistet. Jede Gitterzentrierung erhält ein Kurzsymbol, wobei die Basiszentrierung in drei unterschiedlichen Arten auftreten kann \cite{Schwarz}.
+\begin{table}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{Ortho.png}
-    \caption{\label{fig:orth}}
-\end{figure}
+    \caption{\label{tab:zent}Arten der verschiedenen Gitterzentrierungen mit zugehörigen Symbolen und Koordinaten der hinzukommenden Gitterpunkte
+    bezogen auf die Basis des primitiven Gitters. Daten entnommen aus Ref.~\cite{Schwarz}.}
+      \begin{tabular}{c|c|c}
+      \rowcolor[rgb]{ .851,  .882,  .949} Gitterzentrieung & Symbol & Gitterpunkte $x_{j}, y_{j}, z_{j}$ \\
+      \midrule
+      \midrule
+      primitiv & P     & $(0,0,0)$ \\
+      basiszentriert $(\mathbf{b},\mathbf{c})$-Fläche & A     & $(0,0,0)$ und $(0, 1/2, 1/2)$ \\
+      basiszentriert $(\mathbf{a},\mathbf{c})$-Fläche & B     & $(0,0,0)$ und $(1/2, 0, 1/2)$ \\
+      basiszentriert $(\mathbf{a},\mathbf{b})$-Fläche & C     & $(0,0,0)$ und $(1/2, 1/2, 0)$ \\
+      raumzentriert & I     & $(0,0,0)$ und $(1/2, 1/2, 1/2)$ \\
+      flächenzentriert & F     & $(0,0,0)$ und $(0, 1/2, 1/2)$ und $(1/2, 0, 1/2)$ und $(1/2, 1/2, 0)$ \\
+      rhomboedrische Zelle & R     & $(0,0,0)$ und $(2/3, 1/3, 1/3)$ und $(1/3, 2/3, 2/3)$ \\
+      \end{tabular}
+\end{table}\FloatBarrier \,\\
 
 \textbf{\textit{b) Wie und warum entstehen bei zentrierten Gittern im Beugungsbild 
 systematische Auslöschungen? Wie lauten diese Auslöschungsregeln?}}\\
-$\rightarrow$
+$\rightarrow$Betrachtet man die Gitterpunkte als punktförmige Streuzentren, so wird durch die Streuung einer einfallenden ebenen Welle, 
+eine Kugelwelle erzeugt. Bei Vorhandensein mehrerer Streuzentren in der Elementarzelle ist die Interferenz dieser gestreuten Wellen 
+zu berücksichtigen. Durch Gitterzentrierung kann es also zu Verstärkung, Abschwächung oder sogar Auslöschung der Intensität verglichen
+zum primitiven Gitter kommen, was auf konstruktive und destruktive Interferenz der an den Atomen gestreuten Kugelwellen zurückzuführen ist \cite{EPC}. \\ 
+Die gemessene Intensität auf einem ausreichend weit entfernten Schirm kann mathematisch beschrieben werden, wodurch man einen 
+Ausdruck bekommt, welcher die Interferenz der gestreuten Wellen berücksichtigt (vgl.~Struktur- und Atomfaktor). 
+Hieraus lassen sich die Auslöschungsregeln herleiten, welche in Tab.~\ref{tab:reflex} für 
+die verschiedenen Gitterzentrierungen aufgelistet sind. Die hierbei notwendigen Miller'schen Indizes ($h, k, l$) bieten eine eindeutige Beschreibung 
+der im Kristall vorkommenden Gitterebenen. Die Regeln sagen also aus, welche Atomebenen zu destruktiver Interferenz führen \cite{Schwarz}.
+\begin{table}[h!]
+    \centering
+    \caption{\label{tab:reflex}Mittels Miller-Indizes ausgedrückte Auslöschungsregeln für verschiedene Gitterzentrierungen. 
+    Die Gitterebenen, welche durch Kombination von $h$, $k$ und $l$ eindeutig beschrieben sind, führen zur destruktiven Interferenz und löschen den Reflex, 
+    welcher beim primitiven Gitter noch erkennbar ist, aus (vorausgesetzt man betrachtet einen Kristall mit nur einer Atomsorte).
+    Daten entnommen aus Ref.~\cite{Schwarz}.}
+      \begin{tabular}{c|c|c}
+      \rowcolor[rgb]{ .851,  .882,  .949} Gitterzentrieung & Symbol & Auslöschungsregeln \\
+      \midrule
+      \midrule
+      primitiv & P     & - \\
+      basiszentriert $(mathbf{b},mathbf{c})$-Fläche & A     & k+l ungerade \\
+      basiszentriert $(mathbf{a},mathbf{c})$-Fläche & B     & h+l ungerade \\
+      basiszentriert $(mathbf{a},mathbf{b})$-Fläche & C     & h+k ungerade \\
+      raumzentriert & I     & $h+k+l$ ungerade \\
+      flächenzentriert & F     & $h,k,l$ nicht alle gerade oder ungerade \\
+      rhomboedrische Zelle & R     & $-h+k+l\neq 3n$ oder $h-k+l\neq 3n$ mit $n\,\in\,\mathbb{N}$ \\
+      \end{tabular}
+\end{table}\FloatBarrier
+  

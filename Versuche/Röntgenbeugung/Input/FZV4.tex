@@ -2,26 +2,27 @@
 \textbf{\textit{a) Was ist ein Kristall? Wo gibt es Kristalle? Wo im menschlichen Körper
 finden sich Kristalle oder kristallines Material?}}\\
 $\rightarrow$Ein Kristall ist ein fester Stoff, in dem die Bausteine, wie beispielsweise Atome, Ionen oder Moleküle, 
-in einer präzisen Kristallstruktur mit regelmäßiger Anordnung positioniert sind. Kristalle sind weit verbreitet 
+in einer präzisen Kristallstruktur mit regelmäßiger und langreichweitiger Anordnung positioniert sind. Kristalle sind weit verbreitet 
 und kommen in vielen Formen vor. Beispiele sind Mineralien in der Erdkruste, Metalle und Salze. 
 Auch im menschlichen Organismus findet man Kalziumphosphat-Kristalle im Knochen, 
 Hydroxylapatit-Mineralkristalle im Zahnschmelz
-oder Nierenstein-Kristalle \cite{EPC}. \\  
+oder Nierenstein-Kristalle \cite{Schwarz, EPC}. \\  
 
 \textbf{\textit{b) Was versteht man unter der Kristallstruktur? Wozu mag es sinnvoll sein,
 die Struktur eines Materials zu kennen?}}\\
 $\rightarrow$Die Kristallstruktur eines Materials beschreibt die geordnete Anordnung seiner Atome, 
-Ionen oder Moleküle in einem dreidimensionalen Gitter. Sie kann durch ein mathematisches Punktgitter und
+Ionen oder Moleküle in einem dreidimensionalen Gitter und ist eine periodische Motiv-Wiederholung. 
+Sie kann durch ein mathematisches Punktgitter und
 durch eine Basis (Ort der Atome/Ionen bezogen auf das Punktgitter) eindeutig beschrieben werden.
 Sie ist charakteristisch für jedes Material und beeinflusst seine mechanischen, elektronischen, 
 optischen und thermischen Eigenschaften. Insgesamt ist das Wissen über die Kristallstruktur eines Materials 
-von entscheidender Bedeutung, um diese Eigenschaften zu verstehen, zu steuern und zu optimieren \cite{EPC}. \\
+von entscheidender Bedeutung, um diese Eigenschaften zu verstehen, zu steuern und zu optimieren \cite{Schwarz, EPC}. \\
 
 \textbf{\textit{c) Was bedeutet Symmetrie anschaulich?}}\\
 $\rightarrow$Anschaulich ausgedrückt bezieht sich Symmetrie darauf, dass ein Objekt 
 bestimmte gleiche oder ähnliche Eigenschaften in Bezug auf sein Aussehen oder Struktur aufweist, 
 wenn es bestimmte Transformationen erfährt. 
-Diese Transformationen können Drehungen, Spiegelungen oder Verschiebungen sein.\\
+Diese Transformationen können Drehungen, Spiegelungen oder Verschiebungen sein \cite{Schwarz}.\\
 
 \textbf{\textit{d) Wie ist die kubische Symmetrie definiert und wie das kubisches Gitter? 
 Wie hängen Symmetrie und Gitter zusammen?}}\\
@@ -42,13 +43,12 @@ Daher ist es logisch, dass kubische Gittersysteme auch kubische Symmetrie aufwei
 klassifiziert sind \cite{EPC}. \\
 
 \textbf{\textit{e) Wo in der Elementarzelle sitzen die Atome?}}\\
-$\rightarrow$Die Elementarzelle oder Einheitszelle beinhaltet nur einen Gitterpunkt und wird von den 
-Basis-Vektoren aufgespannt, die im kleinsten Volumen resultieren. Seien diese Basis-Vektoren 
-mit $\mathbf{a}_{i}$ und $i\,\in\,\{1,2,3\}$ beschrieben, dann können die Positionen 
-aller Atome in der Elementarzelle folglich angegeben werden
-\begin{equation}
-    \mathbf{r}_{\text{Atom,j}} = \sum_{i=1}^{3}\,x_{i,j}\mathbf{a}_{i}, 
-\end{equation}
-wobei $x_{i,j}$ zwischen 0 und 1 liegt und die Position des $j$-ten Atoms relativ zu dem eingeschlossenen Gitterpunkt 
-angibt \cite{EPC}. \\ 
-Die Werte von $x_{i,j}$ hängen von dem gewählten mathematischen Punktgitter, sowie dem betrachteten Kristall ab.
+$\rightarrow$Zur Beschreibung der Periodizität der Struktur wird ein Motiv durch eine Elementarzelle aufgespannt, welche 
+das Volumen beschreibt, was von den Basisvektoren $\mathbf{a}$, $\mathbf{b}$ und $\mathbf{c}$ definiert wird. 
+Diese Basisvektoren sind für eine bestimmte Struktur nicht eindeutig und können je nach Anwendungsfall gewählt werden. 
+Atompositionen können mit der gewählten Basis wie folgt ausgedrückt werden
+\begin{equation}\label{eq:position}
+    \mathbf{r}_{\text{j,\,uvw}} = (x_{j} + u)\mathbf{a} + (y_{j} + v)\mathbf{b} + (z_{j} + w)\mathbf{c},
+\end{equation} 
+wobei $x_{j}, y_{j}, z_{j}\,\in\,[0,1[$ und $u,v,q\,\in\,\mathbb{Z}$. Damit beschreibt $\mathbf{r}_{\text{j,\,uvw}}$
+die Position des $j$-ten Atoms bezogen auf den durch $u,v,w$ definierten Gitterpunkt \cite{Schwarz, EPC}.
