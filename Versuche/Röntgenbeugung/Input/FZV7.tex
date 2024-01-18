@@ -1,27 +1,109 @@
 \subsection{\label{subsec:FZV7}Peak im Pulverdiffraktogramm}
 \textbf{\textit{a) Was kann man aus den Peaklagen bestimmen?}}\\
-$\rightarrow$
+$\rightarrow$Die Auswertung von Pulverdiffraktionsmessungen startet durch die Indizierung, 
+was darauf abzielt, den beobachteten Reflexen Miller'sche Indizes zuzuordnen \cite{Kristall}. 
+Ziel ist es für eine gewisse Anzahl an Peaklagen (etwa zehn Stück) die Bragg-Gleichung \eqref{eq:bragg}
+zu lösen. Hierbei ist die Wellenlänge durch die verwendete monochromatische Strahlung und der 
+Einstrahlwinkel $\Theta$ durch die Messung gegeben. Die zu bestimmenden Variablen sind die 
+Kristallstruktur und die zugehörigen Gitterparameter, welche die diskreten Werte von $d$ bestimmen.
+Für hoch symmetrische Systeme ist diese Auswertung mit dem Taschenrechner möglich und schematisch in 
+Ref.~\cite{Kristall} präsentiert. Für komplexere Systeme wird die Indizierung mit Computerprogrammen 
+gemeistert. Insgesamt geben die Peaklagen Auskunft über das Kristallsystem und 
+die Gitterparameter des untersuchten Kristallpulvers. \\
 
 \textbf{\textit{b) Was kann man aus den Peakintensitäten bestimmen?}}\\
-$\rightarrow$
+$\rightarrow$Durch die Peakintensitäten kann bestimmt werden, wie viele Gitterebenen(-Scharen) gleichzeitig 
+Reflexion aufweisen, d.h.~den gleichen Ebenenabstand $d$ aufweisen. Hieraus können Rückschlüsse auf das 
+Kristallsystem gemacht werden. Im kubischen System gibt es für manche Reflexe 48 Gitterebenen mit dem passenden Abstand, 
+während es im triklinen System nur zwei gibt. Aus den relativen Peakintensitäten können Kristallsysteme daher schnell 
+ausgeschlossen oder sogar identifiziert werden, solange eine zufällige Ausrichtung der Kristallite und eine ausreichend 
+große Pulvermenge gegeben ist \cite{Kristall}. \\
 
 \textbf{\textit{c) Welche Faktoren bestimmen das Profil? Was versteht man hierbei unter
 axialer Divergenz?}}\\
-$\rightarrow$
+$\rightarrow$Das Profil der Röntgenreflexe hängt von den verwendeten Instrumenten aber auch von der Probenbeschaffenheit 
+ab. Die Reflexbreite ist unter Vernachlässigung anderer Störeffekte, wie Verspannungen im Kristall durch das Zermahlen,
+invers proportional zur mittleren Korngröße der Kristallite. Zudem wird die Strahlverbreiterung durch Spalte, Blenden, 
+Monochromatoren und sonstige optische Instrumente beeinflusst.
+Die axiale Divergenz beschreibt die Ausweitung der einfallenden Strahlen einer punktförmigen Quelle 
+auf das zu analysierende Pulver. 
+Diese Divergenz kann mithilfe von Kollimatoren oder Blenden kontrolliert werden, 
+um die Breite der Strahlen zu begrenzen, die auf das Pulver treffen. 
+Eine große axiale Divergenz führt zu breiteren Reflexen im Diffraktogramm und somit zu einer 
+schlechteren Auflösung \cite{Kristall}. \\
 
 \textbf{\textit{d) Was bedeuten Atomformfaktor und Strukturfaktor anschaulich?}}\\
-$\rightarrow$
+$\rightarrow$Zur Herleitung der betrachteten Faktoren starten wir bei Gl.~\eqref{eq:laue}. 
+Ist die Laue-Bedingung erfüllt, so vereinfacht sich die Gleichung und unter Verwendung der Definition 
+der Fourier-Koeffizienten $\rho_{hkl}$ ergibt sich folgender Zusammenhang (PEZ = primitive Elementarzelle) \cite{EPC}
+\begin{align}
+    I(\mathbf{K}) &\propto \left\vert\mathscr{A}(\mathbf{K})\right\vert^{2} \\
+    \mathscr{A}(\mathbf{K}) &= \sum_{h,k,l}\rho_{hkl}\int_{V_{\text{Kristall}}}\,e^{i(\mathbf{G}_{hkl}-\mathbf{K})\cdot\mathbf{r}} \\
+    \mathscr{A}(\mathbf{K} = \mathbf{G}_{hkl}) &= \frac{V_{\text{Kristall}}}{V_{\text{PEZ}}}\,\int_{V_{\text{PEZ}}}\,\rho(\mathbf{r})e^{-i \mathbf{G}_{hkl}\cdot \mathbf{r}}\,dV.
+\end{align}
+Teilt man nun die Ortskoordinate in eine Atom- und eine Umgebungskoordinate auf ($\mathbf{r} = \mathbf{r}_{\alpha} + \mathbf{r'}$), 
+so erhalten wir
+\begin{equation}
+    \mathscr{A}(\mathbf{K} = \mathbf{G}_{hkl}) = \frac{V_{\text{Kristall}}}{V_{\text{PEZ}}}\,\sum_{\alpha}\,e^{-i \mathbf{G}_{hkl}\cdot \mathbf{r}_{\alpha}}\,\int_{V_{\alpha}}\,\rho_{\alpha}(\mathbf{r'})e^{-i \mathbf{G}_{hkl}\cdot \mathbf{r'}}\,dV'.
+\end{equation} 
+Mit dem Atomformfaktor $f_{\alpha}(\mathbf{G}_{hkl})$ als Fouriertransformation der atomaren Streudichte $\rho_{\alpha}$ ergibt 
+sich auch der Strukturfaktor $\mathscr{S}_{hkl}$
+\begin{equation}
+    \fbox{$\mathscr{A}(\mathbf{K} = \mathbf{G}_{hkl}) = \frac{V_{\text{Kristall}}}{V_{\text{PEZ}}}\,\sum_{\alpha}\,f_{\alpha}(\mathbf{G}_{hkl})e^{-i \mathbf{G}_{hkl}\cdot \mathbf{r}_{\alpha}}
+    = \frac{V_{\text{Kristall}}}{V_{\text{PEZ}}}\,\mathscr{S}_{hkl}$}.
+\end{equation}
+Der Atomformfaktor beschreibt die Winkelabhängigkeit der Streu-Intensität und kann mittels quantenmechanischer Methoden 
+errechnet werden. Eine genauere Betrachtung ist in Ref.~\cite{Kristall} zu finden. 
+Der Strukturfaktor beschreibt wie stark das Atom $\alpha$ streut und ist daher maßgeblich für die Intensitätsberechnung, die in 
+der nachfolgenden Frage betrachtet wird. \\   
 
 \textbf{\textit{e) Wie kann man die Intensität berechnen? 
 Was bedeuten in diesem Zusammenhang die Begriffe Absorptions-, Lorentz-, 
 Polarisations-, Extinktions- und Flächenhäuffigkeitsfaktor?}}\\
-$\rightarrow$
+$\rightarrow$Für die gestreute Intensität gilt \cite{Kristall}
+\begin{equation}
+    \fbox{$I_{hkl} = I_{0}\cdot S\cdot \lambda^{3}\cdot A\cdot E\cdot Lp\cdot H\cdot \left\vert\mathscr{S}_{hkl}\right\vert^{2}$},
+\end{equation}
+wobei $\lambda$ und $I_{0}$, Wellenlänge und Intensität der einfallenden Welle sind. Die restlichen Größen sind Korrekturfaktoren wie 
+ein Skalierungsfaktor $S$, die Absorptionskorrektur $A$, die Extinktion $E$, die Lorentz-Polarisationskorrektur $Lp$ 
+und die Flächenhäufigkeit $H$ für Pulvermessungen. \\ 
+Der Lorentzfaktor berücksichtigt, dass Reflexe bei Experimenten mit einem bewegten Kristall bei 
+zunehmendem Streuwinkel länger in Reflexionsstellung verbleiben, was zu einer scheinbaren Intensitätszunahme führt. 
+Der Polarisationsfaktor berücksichtigt die Orientierung des elektrischen Vektors der einfallenden und gestreuten Strahlung, 
+da die Amplitude vom Winkel zueinander abhängt.
+Die Flächenhäuffigkeit wurde bereits in Frage b) besprochen. Sie besagt, wie oft eine Gitterebenenschar mit 
+gleichem Abstand $d$ vorkommt, was zu der Vervielfältigung eines Reflexes führt. 
+Der Absorptionskorrekturfaktor berücksichtigt die Wechselwirkung der Strahlung mit der Materie und die damit 
+einhergehenden Intensitätsverluste, die von Materialgröße und chemischer Zusammensetzung abhängen.
+Der Extinktionsfaktor berücksichtigt die Mehrfachstreuung von Röntgenstrahlen und deren Interferenz, was zu 
+weiteren Intensitätsunterschieden führen kann \cite{Kristall}. \\
 
 \textbf{\textit{f) Was beschreibt der Temperaturfaktor (Debye-Waller-Faktor) und wie
 wirkt er sich auf die Intensität der Reflexe aus?}}\\
-$\rightarrow$
+$\rightarrow$Der Debye-Waller-Faktor berücksichtigt die thermische Schwingung der Atome 
+um Ihre Gleichgewichtsposition und die damit einhergehende Abnahme der Streukraft. 
+Zudem ist die Streuung an den ausgedehnten Atomorbitalen weniger stark für größer werdende 
+Beugungswinkel. Für den Fall von isotroper Auslenkung (Atomschwingung hat keine Vorzugsrichtung), 
+lässt sich die Intensitätsabnahme über den temperaturabhängigen Atomformfaktor beschreiben, 
+der sich aus Gewichtung des Atomformfaktors mit dem Debye-Waller-Faktor wie folgt ergibt 
+\begin{equation}
+    f_{\alpha}^{T} = f_{\alpha}e^{-8\pi^{2}\langle x\rangle^{2}\frac{\sin^{2}(\Theta)}{\lambda^{2}}}. 
+\end{equation}
+Die Temperaturabhängigkeit kommt durch die mittlere Auslenkung $\langle x\rangle$ des Atoms ins Spiel 
+und schwächt die Intensität bei sinkender Temperatur aufgrund der erhöhten thermischen Schwingung und 
+der damit verbundenen Atomorbital-Ausdehnung \cite{Kristall}. \\
 
 \textbf{\textit{g) Aus welchen Komponenten setzt sich der Untergrund in einem 
 Pulverdiffraktogramm zusammen? Warum ist der Untergrund bei niedrigen Winkeln
 oft viel höher?}}\\
-$\rightarrow$
+$\rightarrow$Der Untergrund im Messsignal setzt sich aus mehreren Störsignalen zusammen. 
+Zunächst ist die kontinuierliche Hintergrundstrahlung zu beachten, die durch Streuung und Reflexion 
+der Strahlung in der Umgebung des Detektors verursacht wird. Diese Störsignale 
+sind deutlich stärker, wenn der Einfallswinkel niedrig ist, da die Eingangsstrahlung leichter
+an den Detektor gelangt. 
+Zudem kann durch inkohärente Streuung der Strahlung an den Elektronen ein Untergrund entstehen. 
+Außerdem ist es möglich, dass die Elektronen in den Atomen die Energie der einfallenden 
+Welle absorbieren und dann durch Rückfall auf niedrigere Energielevel wieder Strahlung emittieren, 
+welche ein Untergrundsignal erzeugt. 
+Abschließend sind Wechselwirkungen an der Oberfläche gerade bei kleinen 
+Einfallswinkeln relevant, was zu weiteren ungewünschten Signalen führt \cite{Kristall, Schwarz, EPC}.
