@@ -1,0 +1,30 @@
+Referenzmessung
+	Start Pos: 152.7 mm
+	Stepsize: 0.001 mm
+	Anzahl Schritte: 2500
+	Wait time: 10 ms
+	Samples: 100
+p-dotiertes Silizium
+	Start Pos: 153.3 mm
+	Stepsize: 0.001 mm
+	Anzahl Schritte: 700
+	Wait time: 10 ms
+	Samples: 100
+HR-Silizium
+	Start Pos: 152.7 mm
+	Stepsize: 0.001 mm
+	Anzahl Schritte: 2500
+	Wait time: 10 ms
+	Samples: 100
+Folie Nagellack (Alle)
+	Start Pos: 152.7 mm
+	Stepsize: 0.005 mm
+	Anzahl Schritte: 150
+	Wait time: 10 ms
+	Samples: 100
+
+Dicke HR: 
+270 +/- 5 mum
+Fokusdurchmesser:
+1.8 +/- 0.2 mm - Fehler geschätzt aus schlecht zu messen, Fokusbestimmung, andere Justierungseinflüsse
+
