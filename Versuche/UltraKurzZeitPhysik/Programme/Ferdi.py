@@ -42,8 +42,8 @@ hrAmplitude -= hrAmplitude[0]
 refAmplitude -= refAmplitude[0]
 
 # Cut before reflex occurs
-indexCutHr = np.where(tHr==8.3)[0][0]
-indexCutRef = np.where(t==6.2)[0][0]
+indexCutHr = np.where(tHr==7.5)[0][0]
+indexCutRef = np.where(t==6.5)[0][0]
 
 hrAmplitude = hrAmplitude[:indexCutHr]
 tHr = tHr[:indexCutHr]
