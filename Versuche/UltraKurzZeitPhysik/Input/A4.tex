@@ -1,0 +1,26 @@
+\subsection{\label{sec:A23}p-dotiertes Silizium}
+Im Vergleich zum hochohmigen Silizium wird ein THz-Puls aufgenommen, der durch einen Wafer aus 
+p-dotierten Silizium (p-Si) propagiert. Die Aufnahmeparameter werden wie folgt gewählt
+\begin{equation}
+    \Delta s = 0,001\,\si{mm}, \hspace{1.5cm} N_{\text{s}} = 700, \hspace{1.5cm} N_{\text{sample}} = 100, \hspace{1.5cm} s_{0} = 153,3\,\si{mm},
+\end{equation} 
+was die schnelle Aufnahme des Hauptpulses ermöglicht. Der Aufgenommene Puls ist im Vergleich zum Referenzpuls in 
+Abb.~\ref{fig:pdot} dargestellt. Es ist zu beachten, dass sich die Verzögerung $\Delta\tau$ auf zwei verschiedene 
+Startpunkte bezieht, weswegen die gezeigten Pulse nur in ihrer Form und nicht in ihrer Position vergleichbar sind. \\ 
+Im Unterschied zum HR-Si wird die Transmission beim Durchgang durch das p-Si mit dem Drude-Modell berechnet.
+Grundlage hierfür ist die erhöhte Anzahl an freien Ladungsträgern, die mit dem THz-Feld 
+wechselwirken und mit einer gedämpften Schwingung, der Plasma-Frequenz $\omega_{\text{p}}$ und 
+Dämpfung $\Gamma$ reagieren. Für das HR-Si konnte diese Schwingung aufgrund der hohen 
+Resistivität vernachlässigt werden. Es gelten folgende Zusammenhänge
+\begin{align}
+    T(\omega)_{\text{Drude}} &= \frac{4n(\omega)}{(n(\omega)+1)^{2}}e^{-i(n(\omega)-1)\omega L/c} \\
+    n(\omega) &= \sqrt{\epsilon_{\infty} - \frac{\omega_{\text{p}}^{2}}{\omega^{2}-i\Gamma\omega}}.
+\end{align}
+Hierbei entspricht $c$ der Lichtgeschwindigkeit im Vakuum und $L$ gibt die Dicke des 
+Wafers an, für die wir $L = (380\pm5)\,\si{\mu m}$ messen.
+Der theoretische Verlauf kann an die gemessene Transmission, 
+welche analog zum vorherigen Abschnitt berechnet wird, 
+über die Anpassung von $\omega_{\text{p}}$ und $\Gamma$ gefittet werden. 
+Hieraus lassen sich Materialeigenschaften wie die Ladungsträgermobilität $\mu$, 
+die Ladungsträgerdichte $N$, die Leitfähigkeit $\sigma$ und der Widerstand 
+$\rho = \sigma^{-1}$ berechnen.

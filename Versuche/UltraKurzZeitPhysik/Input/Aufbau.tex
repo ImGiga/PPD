@@ -48,4 +48,34 @@ erreicht ist.
 Die auf dem Oszilloskop angezeigte Intensitätsautokorrelationsfunktion wird daraufhin gespeichert, 
 womit dieser Teil des Experiments erfolgreich abgeschlossen ist.\\
 
-\subsection{Terahertz time-domain spectroscopy (THz-TDS)}
+\subsection{\label{sec:aufbau2}Terahertz time-domain spectroscopy (THz-TDS)}
+Im zweiten Teil des Experiments befassen wir uns mit der THz-TDS, bei der mittels eines Laserpulses 
+THz-Strahlung erzeugt wird. Diese durchläuft eine Probe, und durch die Analyse dieser Transmission kann man Materialeigenschaften der Probe bestimmen. \\
+Eine schematische Darstellung des vollständigen Aufbaus ist in Abbildung~\ref{fig:thztds} zu sehen.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{THz.png}
+    \caption{\label{fig:thztds}Skizze des Versuchsaufbaus inkl.~Beschriftung der relevanten optischen 
+    Instrumente. Eine Beschreibung der Funktionsweise ist im Haupttext gegeben. Die Graphik wurde aus 
+    der Versuchsanleitung \cite{Anleitung} übernommen.}
+\end{figure}\FloatBarrier
+Der Laserstrahl mit einer Wellenlänge von $775,\si{nm}$ wird zunächst durch einen 50:50 Strahlteiler 
+in zwei Teilstrahlen aufgespalten. 
+Der oben verlaufende Strahl gelangt über ein Spiegelsystem, das auf einer verschiebbaren Plattform angebracht ist, zur Emitterantenne. 
+Dort erzeugt der Laserpuls in der Halbleiterstruktur freie Ladungsträger. Durch eine angelegte Spannung vom Funktionsgenerator werden 
+diese Ladungsträger in der Antenne beschleunigt, wodurch THz-Strahlung ausgesendet wird. 
+Diese Strahlung wird mithilfe zweier Linsen auf eine Probe fokussiert. \\
+Der zweite Teilstrahl wird zur Detektorantenne geleitet, wo erneut durch den Bänderübergang im Halbleiter freie Elektronen entstehen. 
+Die durch das eintreffende THz-Feld angeregten Ladungsträger erzeugen eine messbare Spannung, die über einen Lock-In-Verstärker 
+verstärkt wird. 
+Diese Spannung steht in proportionalem Verhältnis zum elektrischen Feld des THz-Pulses. \\
+Die verschiebbare Plattform kann in kleinen Schritten $\Delta s$ bewegt werden, was zu einer zeitlichen Verzögerung 
+$\Delta t$ führt. 
+Auf diese Weise kann das elektrische Feld des THz-Pulses als Funktion der Verzögerung gemessen werden. 
+Durch den Vergleich mit einer Referenzgröße lassen sich verschiedene Materialparameter der Probe ableiten. 
+Einstellbare Parameter des Experiments umfassen die Schrittgröße $\Delta s$, Schrittanzahl $N_{\text{s}}$, Messanzahl $N_{\text{sample}}$ und Startposition $s_{0}$. \\
+Der Aufbau gemäß Abbildung~\ref{fig:thztds} ist bereits vorbereitet. 
+Vor der eigentlichen Messung wird der Probentisch mithilfe einer Irisblende in den Fokus der Linsen gebracht. 
+Die Irisblende kann in drei Raumrichtungen verschoben und ihre Blendenweite angepasst werden. 
+Die Freiheitsgrade werden so justiert, dass das Amplitudenmaximum des THz-Pulses gerade beginnt abzunehmen. 
+Die Blendenweite liefert bei korrekter Einstellung eine Abschätzung für die Fokusgröße der THz-Strahlung.
