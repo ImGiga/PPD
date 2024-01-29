@@ -1,4 +1,4 @@
-\subsection{\label{subsec:FZV3}Frage 3}
+\subsection{\label{subsec:FZV3}Fokusdurchmesser}
 \textbf{\textit{Berechnen Sie den theoretischen Durchmesser des THz-Strahls bei bestmöglicher
 Fokussierung in Abhängigkeit der Frequenz (0,5 - 3 THz) und vergleichen Sie dies
 mit dem Fokusdurchmesser eines 1550 nm Strahls. Nehmen Sie an, dass beide
@@ -14,10 +14,14 @@ Hierbei beschreibt $n$ den Brechungsindex zwischen Präparat und Linse ($n_{\tex
 $\alpha$ gibt den halben Öffnungswinkel an (siehe Abb.~\ref{fig:abbe}). 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{Linse.png}
-    \caption{\label{fig:abbe}Schematische Darstellung der Fokussierung eines Lichtstrahls des Durchmessers $D$
+    \subfloat[\centering Berechnungs-Skizze]{{\includegraphics[width=0.57\textwidth]{Linse.png} }}
+    \qquad
+    \subfloat[\centering Fokusdurchmesser]{{\includegraphics[width=0.35\textwidth]{fokus.pdf} }}
+    \caption{\label{fig:abbe}a) Schematische Darstellung der Fokussierung eines Lichtstrahls des Durchmessers $D$
     durch eine Sammellinse der Brennweite $f$. Der halbe Öffnungswinkel $\alpha$ lässt sich 
-    über geometrische Überlegungen berechnen. Graphikvorlage entnommen aus Ref.~\cite{Bild1}.}
+    über geometrische Überlegungen berechnen. Graphikvorlage entnommen aus Ref.~\cite{Bild1}. \\
+    b) Fokusdurchmesser als Funktion der Lichtfrequenz für die betrachteten Linsenparameter im 
+    Bereich der THz-Strahlungsfrequenz.}
 \end{figure}\FloatBarrier
 Der Sinus dieses Winkels lässt sich über die Trigonometrischen Gleichungen berechnen, womit 
 eine Bestimmungsgleichung des theoretischen Fokusdurchmessers folgt, die reziprok proportional zur 
@@ -31,4 +35,6 @@ Folgende Werte gelten für die fokussierten Strahlendruchmesser
 \begin{equation}
     \fbox{$d_{\nu=0,5\,\si{THz}} \approx 1,6\,\si{mm}\hspace{1cm}d_{\nu=3\,\si{THz}} \approx 0,3\,\si{mm}
     \hspace{1cm}d_{\lambda=1550\,\si{nm}} \approx 4,2\,\si{\mu m}$}.
-\end{equation} \newpage
+\end{equation}
+Die Frequenzabhängigkeit des Fokusdurchmessers ist für die betrachteten Linsenparameter in Abb.~\ref{fig:abbe}
+dargestellt.

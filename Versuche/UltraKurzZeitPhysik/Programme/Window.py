@@ -134,3 +134,29 @@ print("mu = {}\ts = {}".format(mu*10000, s_mu*1000))
 print("N = {}\ts = {}".format(N/1000, s_N/1000))#e16
 print("sig = {}\ts = {}".format(sig/100, s_sig/100))
 print("rho = {}\ts = {}".format(rho*100, s_rho*100))
+
+
+
+def Drude2(omega, params):
+    omega_p, gamma = params
+    d = 270 #mum
+    c = 3 # 10**8
+    ind = n(omega, omega_p, gamma)
+    fak = 4*ind/((1 + ind)**2)
+    exponent = (ind-1)*omega*d/c/100
+    first = np.abs( fak * np.exp( -1*1j*exponent ) )
+    second = np.abs( 1 - (ind-1)**2*(1.0/(ind+1))**2*np.exp( -2*1j*ind*omega*d/c/100) )
+    return first / second 
+
+# plt.plot(f_plot, Drude(f_plot, Res.x), c="green") 
+# plt.plot(f_plot, Drude2(f_plot, Res.x), c="r")
+# plt.ylim(0.3, 1.01)
+# plt.xlim(0.4, 2.25)
+# plt.show()
+
+# d9 = np.zeros((len(f_plot), 3))
+# d9[:,0] = f_plot
+# d9[:,1] = Drude(f_plot, Res.x)
+# d9[:,2] = Drude2(f_plot, Res.x)
+
+# np.save("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Daten/drude.npy", d9)

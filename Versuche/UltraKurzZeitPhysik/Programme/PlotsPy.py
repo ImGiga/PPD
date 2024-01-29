@@ -31,18 +31,21 @@ x = data3[:,0]
 Fit = data3[:,1]/np.max(data[:,1])
 Gauss = data3[:,2]/np.max(data[:,1])
 
-# plt.plot(x, AKF, c="turquoise", linewidth=0.6, label="IAKF")
-# plt.plot(x, filtered, c="darkblue", label="IAKF gefiltert") 
-# plt.xlim(min(x), max(x))
-# plt.ylim(-0.025, 1.025)
+plt.plot(x, AKF, c="turquoise", linewidth=0.6, label="IAKF")
+plt.plot(x, filtered, c="darkblue", label="IAKF gefiltert") 
+plt.xlim(min(x), max(x))
+plt.ylim(-0.025, 1.025)
+plt.plot(x, Gauss, c="lightsalmon", ls="--", label="Gaussian fit")
+plt.ylabel("normierte IAKF")
+plt.xlabel(r"$\Delta\tau\,/\,ps$")
+plt.gca().xaxis.set_major_locator(MultipleLocator(0.4))
+plt.legend(loc="upper right", facecolor="wheat", framealpha=0.5, fontsize=15)
+plt.hlines(y=np.max(AKF), color="turquoise", lw=1.2, ls=":", xmin=min(x), xmax=x[np.argmax(AKF)])
+plt.hlines(y=np.max(filtered), color="darkblue", lw=1.2, ls=":", xmin=min(x), xmax=x[np.argmax(filtered)])
+plt.text(x=-0.8, y=np.max(filtered)-0.04, s="{:.2}".format(np.max(filtered)), fontsize=10)
 
-# plt.ylabel("normierte IAKF")
-# plt.xlabel(r"$\Delta\tau\,/\,ps$")
-# plt.gca().xaxis.set_major_locator(MultipleLocator(0.4))
-# plt.legend(loc="upper right", facecolor="wheat", framealpha=0.5, fontsize=15)
-
-# plt.savefig("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Bilder/IAKF.pdf", bbox_inches="tight")
-# plt.show()
+plt.savefig("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Bilder/IAKF.pdf", bbox_inches="tight")
+plt.show()
 
 
 # plt.plot(f, FT, lw=0.5, c="darkorange", label=r"$\mathcal{F}\,(IAKF)$")
@@ -60,9 +63,9 @@ Gauss = data3[:,2]/np.max(data[:,1])
 
 
 # plt.plot(x, Fit, c="darkblue", label="gefilterte IAKF")
-# plt.plot(x, Gauss, c="springgreen", ls="--", label="Gaussian fit")
+# plt.plot(x, Gauss, c="lightsalmon", ls="--", label="Gaussian fit")
 # plt.xlim(min(x), max(x))
-# plt.ylim(0.14, 0.41)
+# plt.ylim(0.15, 0.3995)
 # plt.gca().xaxis.set_major_locator(MultipleLocator(0.4))
 # # plt.gca().yaxis.set_major_locator(MultipleLocator(0.1))
 # plt.legend(loc="upper right", facecolor="wheat", framealpha=0.5, fontsize=15)
@@ -153,27 +156,64 @@ Gauss = data3[:,2]/np.max(data[:,1])
 # plt.show()
 
 
-t = np.loadtxt("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Daten/Lack_REF.dat")[40:,0]
-ref = np.loadtxt("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Daten/Lack_REF.dat")[40:,1]
-rot = np.loadtxt("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Daten/ROT.dat")[40:,1]
-silber = np.loadtxt("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Daten/SILBER.dat")[40:,1]*0.9-0.09
-mag_dunn = np.loadtxt("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Daten/MAG_dunn.dat")[40:,1]
-mag_dick = np.loadtxt("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Daten/MAG_dick.dat")[40:,1]
+# t = np.loadtxt("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Daten/Lack_REF.dat")[40:,0]
+# ref = np.loadtxt("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Daten/Lack_REF.dat")[40:,1]
+# rot = np.loadtxt("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Daten/ROT.dat")[40:,1]
+# silber = np.loadtxt("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Daten/SILBER.dat")[40:,1]*0.9-0.09
+# mag_dunn = np.loadtxt("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Daten/MAG_dunn.dat")[40:,1]
+# mag_dick = np.loadtxt("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Daten/MAG_dick.dat")[40:,1]
 
-plt.plot(t, ref, label="Referenz", c="k")
-plt.plot(t, rot, label="Rot", c="r")
-plt.plot(t, silber, label="Silber", c="grey")
-plt.plot(t, mag_dunn, label="Magnetisch dünn", c="lightblue")
-plt.plot(t, mag_dick, label="Magnetisch dick", c="darkblue")
-plt.legend(loc="upper right", facecolor="wheat", framealpha=0.5, fontsize=15)
-plt.xlim(1.36, max(t))
-plt.ylim(-1.12, -0.73)
-print(np.argmax(ref), np.max(ref))
-plt.vlines(x=t[np.argmax(ref)], ymin=-1.2, ymax=np.max(ref), color="k", alpha=0.6, lw=1, ls="dashed", zorder=-1)
-plt.vlines(x=t[np.argmax(rot)], ymin=-1.2, ymax=np.max(rot), color="r", alpha=0.6, lw=1, ls="dashed", zorder=-1)
-plt.vlines(x=t[np.argmax(silber)], ymin=-1.2, ymax=np.max(silber), color="grey", alpha=0.6, lw=1, ls="dashed", zorder=-1)
-plt.vlines(x=t[np.argmax(mag_dunn)], ymin=-1.2, ymax=np.max(mag_dunn), color="lightblue", alpha=0.6, lw=1, ls="dashed", zorder=-1)
-plt.vlines(x=t[np.argmax(mag_dick)], ymin=-1.2, ymax=np.max(mag_dick), color="darkblue", alpha=0.6, lw=1, ls="dashed", zorder=-1)
-plt.xlabel(r"$\Delta\tau /$ ps")
-plt.ylabel(r"Signal-Amplitude / AU")
-plt.show()
+# plt.plot(t, ref, label="Referenz", c="k")
+# plt.plot(t, rot, label="Rot", c="r")
+# plt.plot(t, silber, label="Silber", c="grey")
+# plt.plot(t, mag_dunn, label="Magnetisch dünn", c="lightblue")
+# plt.plot(t, mag_dick, label="Magnetisch dick", c="darkblue")
+# plt.legend(loc="upper right", facecolor="wheat", framealpha=0.5, fontsize=15)
+# plt.xlim(1.36, max(t))
+# plt.ylim(-1.12, -0.73)
+# print(np.argmax(ref), np.max(ref))
+# plt.vlines(x=t[np.argmax(ref)], ymin=-1.2, ymax=np.max(ref), color="k", alpha=0.6, lw=1, ls="dashed", zorder=-1)
+# plt.vlines(x=t[np.argmax(rot)], ymin=-1.2, ymax=np.max(rot), color="r", alpha=0.6, lw=1, ls="dashed", zorder=-1)
+# plt.vlines(x=t[np.argmax(silber)], ymin=-1.2, ymax=np.max(silber), color="grey", alpha=0.6, lw=1, ls="dashed", zorder=-1)
+# plt.vlines(x=t[np.argmax(mag_dunn)], ymin=-1.2, ymax=np.max(mag_dunn), color="lightblue", alpha=0.6, lw=1, ls="dashed", zorder=-1)
+# plt.vlines(x=t[np.argmax(mag_dick)], ymin=-1.2, ymax=np.max(mag_dick), color="darkblue", alpha=0.6, lw=1, ls="dashed", zorder=-1)
+# plt.xlabel(r"$\Delta\tau /$ ps")
+# plt.ylabel(r"Signal-Amplitude / AU")
+# plt.show()
+
+# D = 20
+# f = 25
+# c = 299792458
+
+# def d(f):
+#     fak = c*np.sqrt( 29 ) / 2
+#     return fak / f / 1e12
+
+# f = np.linspace(0.1, 4, 100)
+
+# print(d(0.5)*1000, d(3)*1000)
+
+# plt.plot(f, d(f)*1000, color="darkblue")
+# plt.xlim(0.4, 3.4)
+# plt.ylim(0, 2.1)
+# plt.ylabel(r"$d\,/$ mm")
+# plt.xlabel(r"$\mu\,/$ THz")
+# plt.gca().xaxis.set_major_locator(MultipleLocator(0.5))
+# plt.gca().yaxis.set_major_locator(MultipleLocator(0.5))
+# plt.savefig("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Bilder/fokus.pdf", bbox_inches="tight")
+# plt.show()
+
+# DD = np.load("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Daten/drude.npy")
+# f = DD[:,0]
+# Drude = DD[:,1]
+# Neu =  DD[:,2]
+
+# plt.plot(f, Drude, c="turquoise", label="ohne Reflexe")
+# plt.plot(f, Neu, c="darkblue", label="mit Reflexen")
+# plt.legend(loc="upper left", facecolor="wheat", framealpha=0.5, fontsize=15)
+# plt.ylim(0.29, 1.01)
+# plt.xlim(0.4, 2.25)
+# plt.xlabel(r"$\omega\,/\,$THz")
+# plt.ylabel(r"Transmission")
+# plt.savefig("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/UltraKurzZeitPhysik/Bilder/reflex.pdf", bbox_inches="tight")
+# plt.show()

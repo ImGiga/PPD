@@ -10,7 +10,9 @@ das gefilterte Signal und das Fourier-Spektrum der IAKF dargestellt.
     \qquad
     \subfloat[\centering Fouriertransformierte IAKF]{{\includegraphics[width=0.47\textwidth]{FTIAKF.pdf} }}
     \caption{\label{fig:A11}a) Gemessenes Diodensignal als Funktion der zeitlichen Verzögerung $\Delta\tau$,
-    sowie gefiltertes Signal. b) Fourier-Spektrum des gemessenen Signals und gewählte 
+    sowie gefiltertes Signal. Das Amplitudenverhältnis ist durch horizontale Linien 
+    dargestellt. Zusätzlich ist ein Gaußfit an das gefilterte Signal 
+    dargestellt, welcher Abb.~\ref{fig:gauss} nochmals übersichtlicher gezeigt ist. b) Fourier-Spektrum des gemessenen Signals und gewählte 
     Cutoff-Frequenz $\omega_{\text{cut}}$.}
 \end{figure}\FloatBarrier
 Die IAKF zeigt, wie erwartet, Symmetrie und konvergiert für $\Delta\tau \rightarrow 0$ gegen ihren Maximalwert. 
@@ -28,7 +30,7 @@ Frequenzen werden durch einen Abschnitt entfernt, und das gefilterte Signal wird
 Fouriertransformation aus dem so gewonnenen Spektrum rekonstruiert. Eine korrekte Filterung sollte bewirken, 
 dass die Signalamplitude auf etwa drei Achtel der ursprünglichen Amplitude abfällt \cite{Anleitung}. Bei Verwendung einer 
 Cutoff-Frequenz von $10\,\si{THz}$ ergibt sich ein Amplitudenverhältnis von 
-$A_{\text{signal}}/A_{\text{filtered}} \approx 2,55$, was erfreulich nahe an der theoretischen Erwartung ($2,67$) liegt. \\\\
+$A_{\text{signal}}/A_{\text{filtered}} \approx 2,55$, was erfreulich nahe an der theoretischen Erwartung ($2,67$) liegt. \\
 Trotz des nicht ideal gaußförmigen optischen Spektrums, gehen wir weiterhin von einem gaußförmigen 
 Laserpuls aus und fitten eine Gaußfunktion $G(\Delta\tau)$ an die gefilterte IAKF. 
 Die gefitteten Parameter sind nachfolgend aufgelistet, wobei sich die Fehler aus der Wurzel der Varianzen ergeben, 
