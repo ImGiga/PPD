@@ -1,19 +1,18 @@
-\subsection{\label{subsec:FZV6}Frage 6}
-\textbf{\textit{Im Versuch wird zusätzlich zum hintergrundfreien Streuspektrum der Partikel auch
-noch das Lampenspektrum der Beleuchtungseinheit, sowie ein Spektrum ohne Beleuchtung
-aufgenommen. Wie müssen diese drei Spektren miteinander verrechnet
-werden, um ein hintergrundkorrigiertes Dunkelfeldspektrum zu erhalten?}} \\
-$\rightarrow$Es gibt zwei mögliche Ansätze zur Berechnung des hintergrundkorrigierten Dunkelfeldspektrums \cite{FZV5}.
-Der subtraktive Ansatz zieht die Hintergrundsignale vom gemessenen Probenspektrum ab, wodurch 
-absolute Intensitätsinformation erhalten bleibt. Der divisive Ansatz wird gewählt um 
-Schwankungen im Hintergrundsignal oder im Lampenspektrum zu berücksichtigen, da eine normalisierte 
-Intensität errechnet wird.
-Da in unserem Versuch keine Information über die absolute Intensität notwendig ist und 
-Schwankungen in der Belichtungsquelle durchaus möglich sind, wählen wir folgenden Ansatz
+\subsection{\label{subsec:FZV6}Background-corrected dark-field spectrum}
+\textbf{\textit{In the experiment, in addition to the background-free scattering spectrum of the particles, 
+the lamp spectrum of the illumination unit, as well as a spectrum without illumination, are also recorded. 
+How should these three spectra be combined to obtain a background-corrected dark-field spectrum?}} \\
+$\rightarrow$There are two possible approaches for calculating the background-corrected dark-field 
+spectrum \cite{FZV5}. The subtractive approach involves subtracting background signals from the measured 
+sample spectrum, preserving absolute intensity information. The divisive approach is chosen to account for 
+fluctuations in the background signal or lamp spectrum, as it calculates a normalized intensity. \\
+Since our experiment does not require information about absolute intensity, and fluctuations in the 
+illumination source are conceivable, we opt for the following approach
 \begin{equation}
     \fbox{$I_{\text{K}} = \frac{I_{\text{P}}-I_{\text{D}}}{I_{\text{L}}-I_{\text{D}}}$},
 \end{equation}
-wobei $I_{\text{K}}$ das korrigierte Spektrum (in arb.~units) ist, $I_{\text{P}}$ dem gemessenen Probenspektrum entspricht 
-und $I_{\text{L}}$ bzw.~$I_{\text{D}}$ die Intensität des Spektrums mit bzw.~ohne Beleuchtung angibt.
-Es werden Lampen- und Probenspektrum daher zunächst vom konstanten Hintergrundsignal bereinigt und der 
-Einfluss des variierenden Lampenspektrums aus der Messung heraus geteilt.  
+where $I_{\text{K}}$ represents the corrected spectrum (in arb.~units), 
+$I_{\text{P}}$ corresponds to the measured sample spectrum, and $I_{\text{L}}$ or $I_{\text{D}}$ 
+indicates the intensity of the spectrum with or without illumination. \\
+Both the lamp and sample spectra are initially corrected for the constant background signal, and 
+the influence of the varying lamp spectrum is divided out from the measurement. \\

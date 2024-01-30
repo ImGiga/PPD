@@ -1,42 +1,106 @@
+import os 
 import numpy as np
 import matplotlib.pyplot as plt
-import os 
-from scipy.optimize import minimize
+from scipy.signal import savgol_filter
+import matplotlib as mpl
+from cycler import cycler
+from matplotlib.ticker import MultipleLocator
+from scipy.signal import windows, savgol_filter
+from scipy.optimize import minimize, curve_fit
+from scipy.fftpack import rfft, irfft, rfftfreq, fft, fftfreq, ifft
+from scipy.stats import linregress
 
-def Gauss(x, params):
-    a,b,c,d = params
-    return a*np.exp( -0.5*(x-b)**2/(c**2)) + d
+def fit_Gauss(x, a, b, c):
+    return a*np.exp( -0.5*(x-b)**2/(c**2))
 
+c_cycle = np.array(['#377eb8', '#ff7f00', '#4daf4a', '#f781bf', '#a65628', '#984ea3',
+                  '#999999', '#e41a1c', '#dede00'])
+mpl.rcParams.update({'font.size': 18, 'axes.labelpad': 0, 'axes.linewidth': 1.2, 'axes.titlepad': 8.0,
+                    'legend.framealpha': 0.4, 'legend.borderaxespad': 0.3, 'legend.borderpad': 0.2,
+                    'legend.labelspacing': 0, 'legend.handletextpad': 0.2, 'legend.handlelength': 1.0,
+                    'legend.loc': 'best', 'xtick.labelsize': 'small', 'xtick.major.pad': 2, 
+                    'xtick.major.size': 3, 'xtick.major.width': 1.2, 'ytick.labelsize': 'small',
+                    'ytick.major.pad': 2, 'ytick.major.size': 3, 'ytick.major.width': 1.2,
+                     'axes.prop_cycle': cycler(color=c_cycle)})
 
 path = os.path.dirname(__file__) + "/../Daten/"
 x, Ilamp0 = np.loadtxt(path + "Lampe_Signal_0_at_679.99nm_cut_at_1286.00Y_01.dat", unpack=True, skiprows=6)
-x, Idark = np.loadtxt(path + "Rausch_Signal_at_679.99nm_cut_at_1286.00Y_01.dat", unpack=True, skiprows=6)
-maxs = []
+Ilamp90 = np.loadtxt(path + "Lampe_Signal_90_at_679.99nm_cut_at_1286.00Y_01.dat", unpack=False, skiprows=6)[:,1]
+IlampUN= np.loadtxt(path + "Lampe_Signal_unpol_at_679.99nm_cut_at_1286.00Y_01.dat", unpack=False, skiprows=6)[:,1]
+Idark = np.loadtxt(path + "Rausch_Signal_at_679.99nm_cut_at_1286.00Y_01.dat", unpack=False, skiprows=6)[:,1]
 for file in os.listdir(path):
+    if file[:6].count("-") == 2:
+        a = 5
+    else:
+        a = 6
+
     if (file.count("-0_at") == 1) and (file[:2] == "90"):
-        print(file)
-        x, I = np.loadtxt(path+file, unpack=True, skiprows=6)
-        name = file[2:6]
-        pltI = I / Ilamp0
+        vars()["I_0_90_"+file[3:a]] = np.loadtxt(path+file, unpack=False, skiprows=6)[:,1]
+    elif (file.count("-90_at") == 1) and (file[:2] == "90"):
+        vars()["I_90_90_"+file[3:a]] = np.loadtxt(path+file, unpack=False, skiprows=6)[:,1]
+    elif (file.count("-unpol_at") == 1) and (file[:2] == "90"):
+        vars()["I_UN_90_"+file[3:a]] = np.loadtxt(path+file, unpack=False, skiprows=6)[:,1]
+    if (file.count("-0_at") == 1) and (file[:2] == "70"):
+        vars()["I_0_70_"+file[3:a]] = np.loadtxt(path+file, unpack=False, skiprows=6)[:,1]
+    elif (file.count("-90_at") == 1) and (file[:2] == "70"):
+        vars()["I_90_70_"+file[3:a]] = np.loadtxt(path+file, unpack=False, skiprows=6)[:,1]
+    elif (file.count("-unpol_at") == 1) and (file[:2] == "70"):
+        vars()["I_UN_70_"+file[3:a]] = np.loadtxt(path+file, unpack=False, skiprows=6)[:,1]
 
-        def fit_Gauss(params):
-            a,b,c,d = params
-            return np.sum(np.square(pltI - Gauss(x, (a,b,c,d)) )) 
+add = 0.6
+pol = ["0", "90", "UN"][0]
+#leng = ["70", "90"][0] 
 
-        Res = minimize(fit_Gauss, [1,680,1,1])
-       
-        max_ind = x[np.argmax(I)]
-        maxs.append(max_ind)
-        plt.plot(x, pltI, label=name)
-        plt.plot(x, Gauss(x, Res.x))
-plt.legend()
+ber = 100
+for n, leng in enumerate(["70", "90"]):
+    plt_name = "I_" + pol + "_" + leng + "_"
+    lambdas = []
+    errs = []
+    for j, i in enumerate(["70", "80", "90", "100", "110", "120", "130", "140"]):
+        Imess = eval(plt_name+i)
+        Ilampe = eval("Ilamp"+pol)
+        pltI_fil = (savgol_filter(Imess,500,3)-savgol_filter(Idark,500,3)+add)/(savgol_filter(Ilampe,500,3)-savgol_filter(Idark,500,3)+add)
+        pltI = (Imess-Idark+add)/(Ilampe-Idark+add)
+        # plt.plot(x, pltI, label=i, c=c_cycle[j], alpha=0.5)
+        # plt.plot(x, pltI_fil, c=c_cycle[j])
+        max_I = np.argmax(pltI_fil)
+        fitx = x[max_I-ber:max_I+ber]
+        fitI = pltI_fil[max_I-ber:max_I+ber]
+        popt, pcov = curve_fit(fit_Gauss, fitx, fitI, [5, x[max_I], 10])
+        lambdas.append(popt[1])
+        errs.append(np.sqrt(np.diag(pcov))[1])
+        #print(popt[1], np.sqrt(np.diag(pcov))[1])
+    #     plt.plot(fitx, fit_Gauss(fitx, popt[0], popt[1], popt[2]), c=c_cycle[j], ls="dashed")
+
+    # plt.legend()
+    # plt.show()
+            
+    chos = np.array([1, 1, 1, 1, 1, 1, 1, 0], dtype=bool)
+    L_0 = np.arange(70, 150, 10)
+    Lx = np.linspace(65, 145, 100)
+    res = linregress(L_0[chos], np.asarray(lambdas)[chos])
+    print(res.slope/2, res.intercept/2)
+    print(res.stderr/2, res.intercept_stderr/2)
+    print(errs*200)
+    plt.plot(L_0, lambdas, ls="none", marker=["D", "o"][n], c=["steelblue", "darkkhaki"][n], markersize=[6, 6][n])
+    plt.plot(Lx, res.slope*Lx + res.intercept, c=["darkcyan", "olive"][n], zorder=-1)
+    plt.plot([140], lambdas[-1], marker="x", c="red", zorder=10, markersize=8)
+    plt.errorbar(x=L_0, y=lambdas, xerr=None, yerr=np.asarray(errs)*200, fmt="none", capsize=5, color='k', alpha=0.5, 
+                 zorder=-10, lw=1.1)
+plt.xlabel(r"$L\,/$ nm")
+plt.ylabel(r"$\lambda\,/$ nm")
+plt.gca().yaxis.set_major_locator(MultipleLocator(50))
+plt.gca().xaxis.set_major_locator(MultipleLocator(20))
+plt.gca().xaxis.set_minor_locator(MultipleLocator(10))
+plt.xlim(68, 142)
+plt.ylim(610, 870)
+plt.plot([],[], label=r"Measurement for $W=70\,\mathrm{nm}$", c="steelblue", ls="none", marker="D")
+plt.plot([],[], label=r"Fit for $W=70\,\mathrm{nm}$", c="darkcyan")
+plt.plot([],[], label=r"Measurement for $W=90\,\mathrm{nm}$", c="darkkhaki", ls="none", marker="o")
+plt.plot([],[], label=r"Fit for $W=90\,\mathrm{nm}$", c="olive")
+plt.errorbar([200], [10], xerr=None, yerr=[10], fmt="none", capsize=5, color='k', alpha=0.5, 
+                 zorder=-10, lw=1.1, label="Error bars")
+plt.plot([], [], marker="x", c="red", ls="none", label="Excluded values")
+
+plt.legend(loc="upper left", facecolor="wheat", framealpha=0.5, fontsize=17)
 plt.show()
-
-
-x, I = np.loadtxt(path+file, unpack=True, skiprows=6)
-
-
-
-
-
-
