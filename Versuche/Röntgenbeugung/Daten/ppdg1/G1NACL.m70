@@ -1,0 +1,9 @@
+
+#=======================================================================
+# Refine
+#=======================================================================
+
+_exptl_crystal_F_000                     0
+_refine_ls_weighting_scheme              sigma
+_refine_ls_number_constraints            0
+_refine_ls_number_restraints             0

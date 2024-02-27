@@ -1,0 +1,165 @@
+Refinement program                                                                                                  page=  1
+structure : g1 nacl                                                                                        12:32:56 27-02-24 
+
+The following lines were read as a control data : 
+=>convchck 0 dolebail 1 keydynam 0 uisolim 0<=                                       
+=>lebailph 1<=                                                                       
+
+******************
+* Run parameters *
+******************
+
+Profile refinement (le Bail) in 10 cycles will be performed
+Calculation of sig(I) is as minimum from profile fit and error propagation formula                                              
+Only not-matching reflections flagged by % will be printed
+Print of reflections after last cycle of refinement
+Correlations larger than 0.9 will be printed
+Automatic procedure for setting of refinement keys will be applied
+Automatic procedure for setting of restrictions on atoms/molecules at special positions will applied
+
+*********************
+* Powder parameters *
+*********************
+
+7 terms of Legendre polynoms will be used to describe background
+2theta interval from :    1.64 to :   22.00 will be skipped
+2theta interval from :  115.00 to :  120.68 will be skipped
+Pseudo-Voigt profile function
+The profile is cut outside 8*FWHM range
+Weighting function will be used during le Bail decomposition
+
+*************
+* Radiation *
+*************
+
+Radiation type: X-ray tube
+Wavelength:   1.54059
+Monochromator - parallel setting, glancing angle: 13.29
+
+******************
+* Structure data *
+******************
+
+Cell parameters       :     5.4791    5.4791    5.4791    90.000    90.000    90.000    Volume :      164.5
+Reciprocal parameters :   0.182510  0.182510  0.182510    90.000    90.000    90.000    Volume :   0.006079
+
+Centrosymmetric space group: Fm-3m  Number : 225
+
+List of centring vectors:
+
+  0.000000  0.000000  0.000000
+  0.000000  0.500000  0.500000
+  0.500000  0.000000  0.500000
+  0.500000  0.500000  0.000000
+
+
+Refinement program                                                                                                  page=  2
+structure : g1 nacl                                                                                        12:32:56 27-02-24 
+
+
+Symmetry operators:
+
+     x    y    z
+    -x   -y    z
+    -x    y   -z
+     x   -y   -z
+     z    x    y
+     z   -x   -y
+    -z   -x    y
+    -z    x   -y
+     y    z    x
+    -y    z   -x
+     y   -z   -x
+    -y   -z    x
+     y    x   -z
+    -y   -x   -z
+     y   -x    z
+    -y    x    z
+     x    z   -y
+    -x    z    y
+    -x   -z   -y
+     x   -z    y
+     z    y   -x
+     z   -y    x
+    -z    y    x
+    -z   -y   -x
+    -x   -y   -z
+     x    y   -z
+     x   -y    z
+    -x    y    z
+    -z   -x   -y
+    -z    x    y
+     z    x   -y
+     z   -x    y
+    -y   -z   -x
+     y   -z    x
+    -y    z    x
+     y    z   -x
+    -y   -x    z
+     y    x    z
+    -y    x   -z
+     y   -x   -z
+    -x   -z    y
+     x   -z   -y
+     x    z    y
+    -x    z   -y
+    -z   -y    x
+    -z    y   -x
+     z   -y   -x
+     z    y    x
+
+Refinement program                                                                                                  page=  3
+structure : g1 nacl                                                                                        12:32:56 27-02-24 
+
+F(000)  for X-rays    :        0.000       0.000       0.000
+F(000)  for neutrons  :        0.000
+
+
+Equations induced by symmetry :
+
+alpha[Phase#1]=90
+beta[Phase#1]=90
+gamma[Phase#1]=90
+b[Phase#1]=a[Phase#1]
+c[Phase#1]=a[Phase#1]
+
+**************************************
+* User defined constrains/restraints *
+**************************************
+
+None
+
+******************************
+* User defined keep commands *
+******************************
+
+None
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

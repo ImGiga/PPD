@@ -1,0 +1,66 @@
+Version Jana2020
+title g1 nacl
+spgroup Fm-3m 225 7
+lattice F
+symmetry x y z
+symmetry -x -y z
+symmetry -x y -z
+symmetry x -y -z
+symmetry z x y
+symmetry z -x -y
+symmetry -z -x y
+symmetry -z x -y
+symmetry y z x
+symmetry -y z -x
+symmetry y -z -x
+symmetry -y -z x
+symmetry y x -z
+symmetry -y -x -z
+symmetry y -x z
+symmetry -y x z
+symmetry x z -y
+symmetry -x z y
+symmetry -x -z -y
+symmetry x -z y
+symmetry z y -x
+symmetry z -y x
+symmetry -z y x
+symmetry -z -y -x
+symmetry -x -y -z
+symmetry x y -z
+symmetry x -y z
+symmetry -x y z
+symmetry -z -x -y
+symmetry -z x y
+symmetry z x -y
+symmetry z -x y
+symmetry -y -z -x
+symmetry y -z x
+symmetry -y z x
+symmetry y z -x
+symmetry -y -x z
+symmetry y x z
+symmetry -y x -z
+symmetry y -x -z
+symmetry -x -z y
+symmetry x -z -y
+symmetry x z y
+symmetry -x z -y
+symmetry -z -y x
+symmetry -z y -x
+symmetry z -y -x
+symmetry z y x
+unitsnumb 1
+roundmethod 1
+end
+*******************************************************************************
+refine
+  convchck 0 dolebail 1 keydynam 0 uisolim 0
+  lebailph 1
+end refine
+fourier
+end fourier
+dist
+end dist
+contour
+end contour
