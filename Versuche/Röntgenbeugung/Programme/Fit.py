@@ -31,3 +31,35 @@ print(abs(FWHM_hinten - FWHM_vorne)*0.5 + FWHM_hinten)
 print(abs(FWHM_omega1 - FWHM_omega2)*0.5 + FWHM_omega2)
 
 print(-2.5+0.594)
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Daten erzeugen
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+# Plot erstellen
+fig, ax1 = plt.subplots()
+
+# Erste y-Achse (links)
+ax1.plot(x, y1, 'b-')
+ax1.set_xlabel('X-Achse')
+ax1.set_ylabel('Sin', color='b')
+
+# Zweite y-Achse (rechts)
+ax2 = ax1.twinx()
+ax2.plot(x, y2, 'r-')
+ax2.set_ylabel('Cos', color='r')
+
+# Positionen für die Beschriftungen auf der zweiten x-Achse
+label_positions = [2, 4, 6, 8]
+
+# Beschriftungen erstellen und Linien zeichnen
+for pos in label_positions:
+    ax2.text(pos, np.cos(pos), f'{pos}', color='black', ha='center', va='bottom')  # Beschriftungen
+    ax2.plot([pos, pos], [0, np.cos(pos)], color='gray', linestyle='--')  # Linien
+
+plt.show()
