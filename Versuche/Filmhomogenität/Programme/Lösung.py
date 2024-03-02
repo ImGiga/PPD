@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 cZiel =  np.array([1,25,50,100,150,200,250]) 
-cStamm = 250            # mu g / mu l
+cStamm = 25            # mu g / mu l
 vZiel = 250             # mu l
 
 vStammExakt = vZiel * cZiel / cStamm                # Gedanke: vStamm * cStamm / (vZiel = vGesamt) = cZiel
