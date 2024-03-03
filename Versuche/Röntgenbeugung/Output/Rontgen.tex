@@ -28,8 +28,10 @@
 \usepackage{multirow}
 \usepackage{booktabs}
 \usepackage{siunitx}
+\usepackage{pdfpages}
 \usepackage[table]{xcolor}
 \usepackage[style=numeric-comp, natbib, backend=biber, backref=true, sorting=none, maxbibnames=99]{biblatex}
+\sisetup{separate-uncertainty=true}
 % \DeclareFieldFormat
 %   [article,inbook,incollection,inproceedings,patent,thesis,
 %    unpublished,techreport,misc,book]
@@ -151,9 +153,11 @@
     \newpage
     \input{../Input/Fazit}
     \newpage
-    % \appendix
+    
     % \numberwithin{equation}{section}
     % \input{Input/}
     % \newpage
     \printbibliography
+    \appendix
+    \includepdf[pages=-]{../Daten/Protokoll.pdf}
 \end{document}

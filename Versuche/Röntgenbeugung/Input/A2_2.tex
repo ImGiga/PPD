@@ -1,12 +1,12 @@
-\subsection{Systematische Auslöschungen und mögliche Raumgruppen}
+\subsubsection{Systematische Auslöschungen und mögliche Raumgruppen}
 Die Anzahl der Formeleinheiten $Z$ pro Elementarzelle lässt sich mit der Gleichung aus der Anleitung folgendermaßen bestimmen:
 \begin{equation}\label{eq:formeleinheit}
     Z = \frac{N_A \cdot \rho_x \cdot V_{EZ}}{M_M} = 4
 \end{equation}
-mit $N_A$ der Avogadro-Konstante, $\rho_x = \SI[options]{2,17}[pre-unit]{\gram \per \cubic \centimetre}$ der Dichte von Kochsalz, $V_{EZ} = a^3$ dem Volumen der Elementarzelle und $M_M = \SI[options]{58,44}[pre-unit]{\gram \per \mol}$ der molaren Masse des Materials.\\
-Jetzt werden die gefundenen und indizierten Peaks aus Tab.~\ref{tab:gitter} und Tab.~\ref{tab:nonfitval} den Reflexklassen $hkl, 0kl, hhl $ und $00l$ in Tab.~ref\ref{tab:zuordnung} zugeordnet. Die angegebene Bedingung ist hierbei immer geradezahlig, d.h. $h+k = 2n$ oder $l = 2n$.
+mit $N_A$ der Avogadro-Konstante, $\rho_x = \SI{2,17}[pre-unit]{\gram \per \cubic \centi\metre}$ der Dichte von Kochsalz, $V_{EZ} = a^3$ dem Volumen der Elementarzelle und $M_M = \SI{58,44}[]{\gram \per \mol}$ der molaren Masse des Materials.\\
+Jetzt werden die gefundenen und indizierten Peaks aus Tab.~\ref{tab:gitter} und Tab.~\ref{tab:gitter2} den Reflexklassen $hkl, 0kl, hhl $ und $00l$ in Tab.~\ref{tab:zuordnung} zugeordnet. Die angegebene Bedingung ist hierbei immer geradezahlig, d.h. $h+k = 2n$ oder $l = 2n$.
 
-\begin{table}[h]\label{tab:nonfitval}
+\begin{table}[h!]
     \centering
      \begin{tabular}{|c|c|c|c|} 
      \hline
@@ -26,7 +26,10 @@ Jetzt werden die gefundenen und indizierten Peaks aus Tab.~\ref{tab:gitter} und 
      12 & 3 1 5 & $hkl$ & $h+k, h+l, k+l$\\
      13 & 4 2 4 & $hhl$ & $h+l, l, h$\\  [1ex]
      \hline
+    
      \end{tabular}
+     \caption[short]{Zuordnung der Peaks zu den Reflexklassen.}
+     \label{tab:zuordnung}
 \end{table}
 
 Laut den Angaben aus der Tabelle und aus dem Skript ist die einzig mögliche Raumgruppe für Kochsalz die $Fm\overline{3}m$-Gruppe. NaCl ist also frächenzentriert und hat damit 4 Gitterpunkte in einer Elementarzelle, was mit dem berechneten Wert für $Z$ aus Gl.~\ref{eq:formeleinheit} übereinstimmt.\\
