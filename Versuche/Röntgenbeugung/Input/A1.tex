@@ -82,11 +82,129 @@ Benutzung von Gl.~\eqref{eq:welle} zum gewünschten Spektrum führt.
 Zu beachten ist hierbei die Fehlerfortpflanzung des linearen Fits, was zu folgendem 
 Fehler der Wellenlänge führt
 \begin{align}
-    s_{\lambda} &= \left\vert\frac{\partial \lambda}{\partial \Theta}\right\vert = \left\vert2d\cos(\Theta)s_{\Theta}\right\vert \\
+    s_{\lambda} &= \left\vert\frac{\partial \lambda}{\partial \Theta}\right\vert = \left\vert2d\cos(\Theta)s_{\Theta}\right\vert  \label{eq:errkali}\\
     s_{\Theta} &= \sqrt{\left(\Theta_{\text{kali}}s_{m}\right)^{2} + s_{b}^{2}}.
 \end{align}
-Dieser Wert muss bei der folgenden Kantenbestimmung zusätzlich zum Ablesefehler berücksichtigt werden.
+Dieser Wert muss bei der folgenden Kantenbestimmung zusätzlich zum Ablesefehler berücksichtigt werden. \\
 \subsubsection{Identifizierung des Metallplättchens}
+Nachdem die gemessenen Winkel richtig kalibriert und in Wellenlängen umgerechnet sind, können wir die 
+gemessenen Spektren betrachten und hieraus das Material des Metallplättchens identifizieren. 
+Die energetische Lage der K-Absorptionskante lässt sich mit folgender Formel für Elemente mit 
+einer Ordnungszahl $Z>13$ annähern \cite{Kener}
+\begin{equation}
+    E_{K}/\si{eV} \approx 14\left(Z-3\right)^{2}.
+\end{equation}
+Außerdem lässt sich aus Vergleich der Datenbankwerte \cite{Database} direkt erkennen, dass 
+das gesuchte Metall in der fünften Periode des Periodensystems zu suchen ist, da die K-Absorptionskante 
+im Bereich von $\lambda\approx 0,5\,\si{\angstrom}$ liegt. \\
+In Abb.~\ref{fig:metallspekt} sind die gemessenen Spektren als Funktion der kalibrierten 
+Wellenlänge dargestellt.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[clip, trim={2.7cm 1cm 3cm 2.5cm}, width=\textwidth]{Metall.pdf}
+    \caption{\label{fig:metallspekt}Die gemessenen Spektren (Referenz und mit Metall-Folie)
+    als Funktion der kalibrierten Wellenlänge. Die Intensität ist auf den maximalen Intensitätswert der 
+    Referenz normiert und die y-Achse skaliert logarithmisch, um die Kanten besser erkennbare zu machen.
+    Es sind die identifizierten K-Absorptionskanten aller auftretenden höherer Ordnungen, sowie die 
+    Kanten von möglichen Metallen dargestellt.}
+\end{figure}\FloatBarrier
+Zur genauen Bestimmung der Lage der K-Kante, werden alle auftretenden 
+Ordnungen berücksichtigt, um den Bestimmungsfehler zu minimieren.
+Als Ablesefehler wählen wir $s_{\lambda,\text{ abl}} = n0,01\,\si{\angstrom}$, welcher sich aus
+dem Auflösungsvermögen und der Beugungsordnung $n$ ergibt. Hierzu muss der Kalibrierungsfehler $s_{\lambda,\text{ kal}}$ 
+aus Gl.~\eqref{eq:errkali} beachtet werden, sodass sich der gesamte Fehler der Wellenlängenbestimmung 
+folglich ergibt
+\begin{equation}\label{eq:fehler}
+    s_{\lambda} = \sqrt{s_{\lambda,\text{ abl}}^{2} + s_{\lambda,\text{ kal}}^{2}}.
+\end{equation} 
+Die Lage der Absorptionskanten, sowie die zugehörigen Fehler ergeben sich zu
+\begin{alignat}{2}  
+    \lambda_{n=1} &= (0,5066\pm0,0106)\,\si{\angstrom}\hspace{2.5cm}\lambda_{n=2} &&= (1,0163\pm0,0204)\,\si{\angstrom} \\
+    \lambda_{n=3} &= (1,5210\pm0,0303)\,\si{\angstrom}\hspace{2.5cm}\lambda_{n=4} &&= (2,0284\pm0,0403)\,\si{\angstrom},
+\end{alignat}
+woraus wir die Lage der K-Absorptionskante erster Ordnung bestimmen
+\begin{align}
+    \lambda_{K_{n=1}} &= (0,5072125\pm0,0102459)\,\si{\angstrom} \\
+    \Rightarrow\Aboxed{\lambda_{K_{n=1}} &= (0,507\pm0,010)\,\si{\angstrom}}.
+\end{align}
+Betrachten wir die theoretische Lage der Absorptionskanten der infrage kommenden Metalle
+\begin{equation}
+    \lambda_{K_{\text{Ag}}} = 0,4859\,\si{\angstrom}\hspace{1cm}\lambda_{K_{\text{Pd}}} = 0,5092\,\si{\angstrom}\hspace{1cm}
+    \lambda_{K_{\text{Rh}}} = 0,5340\,\si{\angstrom},
+\end{equation} 
+so bestätigt sich die optische Übereinstimmung aus Abb.~\ref{fig:metallspekt} mit Palladium (Pd).
+Die Kanten für Rhodium (Rh) und Silber (Ag) liegen nicht im ersten Fehlerintervall, was zeigt, 
+dass wir das Metall mit ausreichender Genauigkeit eindeutig identifizieren können. \\
+Für das identifizierte Metall Palladium finden wir aus Ref.~\cite{Database} weiter L-Absorptionskanten, 
+die jedoch außerhalb des gemessenen Bereichs liegen 
+\begin{equation}
+    L-I\rightarrow 3,4399\,\si{\angstrom}\hspace{1.5cm}
+    L-II\rightarrow 3,7229\,\si{\angstrom}\hspace{1.5cm}
+    L-III\rightarrow 3,9071\,\si{\angstrom}.
+\end{equation}
+Die Dichte von Palladium beträgt $\rho= 12,023\,\si{g/cm^{3}}$, was wir im 
+folgenden Auswertungsschritt benötigen. \\
+\subsubsection{K-Absorptionskante der ersten Ordnung}
+Zur genauen und übersichtlichen Darstellung konzentrieren wir uns nur auf dem Bereich der ersten Absorptionskante
+und stellen in diesem Bereich den Massenabsorptionskoeffizienten $\frac{\mu}{\rho}(\lambda)$ dar. 
+Aus Gl.~\eqref{eq:massI} erhalten wir folgende Bestimmungsgleichung
+\begin{equation}
+    \frac{\mu}{\rho}(\lambda) = -\frac{1}{\rho x}\ln\left(\frac{I_{\text{Metall}}}{I_{\text{Ref}}}\right).
+\end{equation}
+In Abb.~\ref{fig:massI} ist ein kleiner Bereich des Massenabsorptionskoeffizienten 
+um die K-Absorptionskante dargestellt.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{massI.pdf}
+    \caption{\label{fig:massI}Massenabsorptionskoeffizient $\mu/\rho$ als Funktion der Wellenlänge in einem 
+    kleinen Intervall um die K-Absorptionskante. Zusätzlich sind die theoretischen 
+    Lagen dieser Kanten für verschiedene Metall (Ag, Pd, Rh) eingezeichnet \cite{Database}. 
+    Das Fehlerintervall ergibt sich aus Gl.~\eqref{eq:fehler}.}
+\end{figure} \FloatBarrier
+Es ist zu erkennen, dass die Lage der Absorptionskante innerhalb des ersten Fehlerintervalls 
+mit der K-Kante von Palladium übereinstimmt, was aus der vorhergehenden Rechnung zu erwarten 
+war. \\
+Der Verlauf des Massenabsorptionskoeffizient lässt sich am besten in einer energetischen 
+Betrachtung durchführen. Zur Ionisation von Elektronen aus der K-Schale wird eine 
+gewisse Mindestenergie (Ionisierungsenergie) benötigt. Ist die Energie zu klein und damit 
+die Wellenlänge zu groß, so ist die Absorption der Materie gering und nur durch andere 
+Faktoren gegeben. Im Bereich der K-Kante steigt der Absorption schlagartig an, da hier 
+die Energie zur Ionisation ausreicht und die Strahlung daher stärker mit der Materie wechselwirkt 
+und somit Intensität raubt. Überschreitet man diese Energie und geht zu kürzeren Wellenlängen über,
+so sinkt die Ionisationswahrscheinlichkeit, was sich aus Quantenmechanischen Überlegungen und 
+der Diskretisierung der Energieniveaus ergibt. Der Massenabsorptionskoeffizient fällt daher 
+in Richtung kürzerer Wellenlängen wieder ab. \\
+\subsubsection{Beurteilung der Messung}
+Insgesamt können wir aus den Messdaten eindeutig das absorbierende Metall identifizieren, was 
+auf die Richtigkeit der Justage und der Durchführung deutet. 
+Zur Bewertung des Messbereichs muss zunächst über Gl.~\eqref{eq:minlam} die minimal erreichbare 
+Wellenlänge bzw.~maximale Energie der Röntgenstrahlung errechnet werden. Da wir bei einer Spannung 
+von $U=50\,\si{kV}$ beträgt die minimal erreichbare Wellenlänge ungefähr 
+$\lambda_{\text{min}}\approx0,25\,\si{\angstrom}$, was mit Gl.~\eqref{eq:winkel} einem Minimalwinkel 
+von $\Theta_{\text{min}}\approx3,7^{\circ}$ entspricht. Der Messstart bei $\Theta_{0} = 5,0^{\circ}$ 
+erscheint daher sinnvoll. Die maximal Wellenlänge bzw.~der Maximalwinkel bis zu welchem gemessen wird, 
+ergibt sich aus dem Messaufbau und den verwendeten Geräten. Die Intensität der Röntgenstrahlung nimmt 
+stark mit steigender Wellenlänge ab (vgl.~Abb.~\ref{fig:char}), wodurch das Signal 
+bei gegebenen Untergrund schwer detektierbar wird. Anhand der gemessenen Spektren scheint der 
+Maximalwinkel $\Theta_{\text{max}} = 51,0^{\circ}$ sinnvoll gewählt, da im hinteren Bereich der 
+Messung eine Unterscheidung vom Untergrund nicht mehr funktioniert. \\
+Will man auch in einem Winkelbereich schwacher Röntgenintensität aussagekräftige Messungen 
+durchführen, so muss die Integrationszeit weiter erhöht werden. Für das Praktikum sind die 
+Integrationszeiten sinnvoll, da hierdurch bei übersichtlicher Messdauer dennoch ein 
+gut entwickeltes Signal gemessen wird. \\
+Die Winkelschrittweite von $\Delta{\Theta} = 0,02^{\circ}$ resultiert in einer maximalen Wellenlängenänderung 
+von $\Delta{\lambda}_{\text{max}}\approx 0,0013\,\si{\angstrom}$. Hiermit lassen sich Änderungen, und Peaks 
+sehr genau einschränken, was die Schrittweite legitimiert. Je nach Anwendung können diese Parameter eingestellt
+werden, um schnelle oder genaue Ergebnisse zu erhalten. \\
+Um die $K\alpha$-Linien sinnvoll zu messen, muss zunächst die Energie der Röntgenstrahlung ausreichen, um 
+die benötigte Ionisation zu erreichen. Rechnerisch ergibt sich aus Gl.~\eqref{eq:winkel} eine benötigte 
+Spannung von $U>59,3\,\si{kV}$. Da die Bremsstrahlung die charakteristische Strahlung überdecken kann, 
+solle eine deutlich größere Spannung gewählt werden, um die Peaks getrennt vom restlichen Signal aufzulösen. \\
+Zusammenfassend war die Messung erfolgreich und die Ergebnisse im erwarteten Rahmen. Der zeitliche 
+Aufwand der Messung ist vertretbar und die Einstellung der Messgeräte interessant. Im folgenden Abschnitt
+analysieren wir die Ergebnisse des zweiten Versuchteils. \\
+
+
 
 
 

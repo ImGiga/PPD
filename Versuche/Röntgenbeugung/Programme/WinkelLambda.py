@@ -16,7 +16,7 @@ mpl.rcParams.update({'font.size': 18, 'axes.labelpad': 0, 'axes.linewidth': 1.2,
                     'legend.loc': 'best', 'xtick.labelsize': 'small', 'xtick.major.pad': 2, 
                     'xtick.major.size': 3, 'xtick.major.width': 1.2, 'ytick.labelsize': 'small',
                     'ytick.major.pad': 2, 'ytick.major.size': 3, 'ytick.major.width': 1.2,
-                     'axes.prop_cycle': cycler(color=c_cycle)})
+                     'axes.prop_cycle': cycler(color=c_cycle), 'axes.formatter.use_locale': True})
 
 rel_path = "C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/Röntgenbeugung/Daten/Messung 1/"
 h = 4.135136*1e-18    # keV s
@@ -34,13 +34,13 @@ def calc_theta(lam, n=1):
 def correct_Theta(theta,m,b):
     return m*theta + b
 
-def calc_mu(I, I0, lam):
-    return -1.0 / lam * np.log(I / I0)
+def calc_mu(I, I0, rho, x):
+    return -1.0 / rho / x * np.log(I / I0)
 
 def error_theta(theta, sm, sb):
     return np.sqrt( (theta*sm)**2 + sb**2 )
 def error_lambda(theta, st, n=1, d=d):
-    return np.abs( 2*d/n *np.cos( theta ) * st )
+    return np.abs( 2*d/n *np.cos( np.radians(theta) ) * st )
 
 
 theo_lam_1 = np.array([1.06786, 1.09857, 1.24430, 1.26271, 1.28181, 1.30164, 1.47631]) # 1.06146, 
@@ -68,7 +68,7 @@ ic.enable()
 # plt.xlabel(r"$\Theta_{\mathrm{mess}} [^{\circ}]$")
 # plt.ylabel(r"$\Theta_{\mathrm{kali}} [^{\circ}]$")
 # plt.legend(loc="upper left", facecolor="wheat", framealpha=0.5, fontsize=18)
-# plt.savefig("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/Röntgenbeugung/Bilder/fit.pdf", bbox_inches="tight")
+# #plt.savefig("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/Röntgenbeugung/Bilder/fit.pdf", bbox_inches="tight")
 
 
 def load_data(path):
@@ -92,7 +92,7 @@ I_met_ges = np.concatenate((I_met_front[:np.argmin(abs(T_met_front-22.5))+1], I_
 I_met_filt = savgol_filter(I_met_ges, 15, 3)
 
 ic( (lambda_ref == lambda_met).all() )
-mu = calc_mu(I_met_filt, I_ref_filt, lambda_ref)
+mu = calc_mu(I_met_ges, I_ref_ges, 12.023, 0.0025)
 
 # Plot
 # plt.plot(T_ref_ges, I_ref_ges/max(I_ref_ges), color="mediumseagreen", lw=1)
@@ -118,11 +118,54 @@ mu = calc_mu(I_met_filt, I_ref_filt, lambda_ref)
 # plt.legend(loc="upper right", facecolor="wheat", framealpha=0.5, fontsize=14, ncol=4)
 # plt.show()
 
-plt.plot(lambda_ref, I_ref_ges/max(I_ref_ges))
-plt.plot(lambda_met, I_met_ges/max(I_ref_ges))
-plt.show()
-
-# plt.plot(lambda_ref, mu)
+K_Kant = np.array([0.5066, 1.0163, 1.5210, 2.02839])
+K_Int = np.array([0.399099, 0.0712207, 0.027787, 0.0140396])
+# plt.plot(lambda_ref, I_ref_ges/max(I_ref_ges), c="mediumseagreen", lw=1, label="Referenz")
+# plt.plot(lambda_met, I_met_ges/max(I_ref_ges), c="darkred", lw=1, label="Mit Metall-Folie")
+# secax = plt.gca().secondary_xaxis('top')
+# secax.xaxis.set_ticks(K_Kant, [r"$K_{n=1}$", r"$K_{n=2}$", r"$K_{n=3}$", r"$K_{n=4}$"],)
+# plt.yscale('log')
+# plt.ylim(0, 1.1)
+# plt.xlim(min(lambda_ref), max(lambda_ref))
+# plt.vlines(x=K_Kant, ymin=K_Int, ymax=1.1, color="k", lw=1, zorder=-1)
+# plt.vlines(x=[0.4859, 0.5340][0], ymin=0, ymax=1.1, color=["darkviolet", "darkorange"][0], alpha=0.6, zorder=-1, 
+#            lw=1, label=[r"$K_{Ag}$", r"$K_{Rh}$"][0])
+# plt.vlines(x=0.5092, ymin=0, ymax=1.1, color="royalblue", alpha=0.6, zorder=-1, 
+#            lw=1, label=r"$K_{Pd}$")
+# plt.vlines(x=[0.4859, 0.5340][1], ymin=0, ymax=1.1, color=["darkviolet", "darkorange"][1], alpha=0.6, zorder=-1, 
+#            lw=1, label=[r"$K_{Ag}$", r"$K_{Rh}$"][1])
+# plt.legend(loc="upper right", facecolor="wheat", framealpha=0.5, fontsize=16)
+# plt.ylabel("normierte Intensität")
+# plt.xlabel(r"$\lambda [\AA]$")
 # plt.show()
 
+ber = 40
+idx = np.argmin(np.abs(lambda_ref-0.5066))
+plt.plot(lambda_ref[idx-ber:idx+ber], mu[idx-ber:idx+ber], marker="o", lw=1, markersize=4, 
+         color="olive", label="Daten")
+plt.vlines(x=[0.4859, 0.5340][0], ymin=9, ymax=54, color=["darkviolet", "darkorange"][0], alpha=0.6, zorder=-1, 
+           lw=1.5, label=[r"$K_{Ag}$", r"$K_{Rh}$"][0])
+plt.vlines(x=0.5092, ymin=9, ymax=54, color="royalblue", alpha=0.6, zorder=-1, 
+           lw=1.5, label=r"$K_{Pd}$")
+plt.vlines(x=[0.4859, 0.5340][1], ymin=9, ymax=54, color=["darkviolet", "darkorange"][1], alpha=0.6, zorder=-1, 
+           lw=1.5, label=[r"$K_{Ag}$", r"$K_{Rh}$"][1])
+plt.errorbar(lambda_ref[idx], mu[idx], xerr=0.010, capsize=7, fmt="o", c="black", label="Fehler-\nintervall")
+plt.ylim(9, 54)
+plt.xlim(lambda_ref[idx-ber], lambda_ref[idx+ber-1])
+plt.legend(loc="lower left", facecolor="wheat", framealpha=0.5, fontsize=16)
+plt.ylabel(r"$\mu/\rho\,\,[cm^{2}/g]$")
+plt.xlabel(r"$\lambda\,\,[\AA]$")
+plt.savefig("C:/Users/toni-/OneDrive/Alt/Desktop/Uni/Master/PPD/Versuche/Röntgenbeugung/Bilder/massI.pdf", bbox_inches="tight")
+
 #plt.plot(T_met_ges, I_met_ges/max(I_met_ges), T_met_ges, I_met_filt/max(I_met_ges))
+
+
+K_Theta = calc_theta(K_Kant)
+ic(K_Theta)
+s_Theta = error_theta(theta=K_Theta, sm=sm, sb=sb)
+ic(s_Theta)
+s_Lambda_kal = error_lambda(theta=K_Theta, st=np.radians( s_Theta ) ) 
+ic(s_Lambda_kal)
+s_lam_ges = [np.sqrt( s_Lambda_kal[i-1]**2 + (i*0.01)**2 ) for i in range(1, 5)]
+ic(s_lam_ges)
+
