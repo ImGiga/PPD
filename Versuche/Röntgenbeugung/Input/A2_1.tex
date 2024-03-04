@@ -8,7 +8,7 @@ In diesem Versuchsteil wurde ein Pulverdiffaktogramm von Kochsalz (NaCl) aufgeno
     \label{fig:rohspektrum}
 \end{figure}
 
-Die so aufgenommenen Daten sollen nun insbesondere anhand der Peaks analysiert werden. 
+Die Daten aus dem Spektrum sollen nun anhand der Peakpositionen analysiert werden. 
 Um insbesondere die kleinen Peaks besser zu finden, wird das Spektrum zunächst mit einem Savitzky-Golay-Filter geglättet. Die so geglätteten Daten sind in Abb.~\ref{fig:geglättet} dargestellt, in der die Peaks bereits indiziert sind.
 \begin{figure}
     \centering
@@ -16,7 +16,8 @@ Um insbesondere die kleinen Peaks besser zu finden, wird das Spektrum zunächst 
     \caption{Gefiltertes Spektrum von Kochsalz mit der Zählrate $I$ gegen den Streuwinkel $2\Theta$. Das rohe Spektrum ist in blau, das geglättete in rot dargestellt. Ebenso sind die Peaks mit ihren Millerschen Indizes beschriftet.}
     \label{fig:geglättet}
 \end{figure}
-Mithilfe der Software Jana2020 \footnote[1]{Institute of Physics,Department of StructureAnalysis, Cukrovarnicka 10, 16253 Praha 6, Czech Republic} wird nun probiert, die Peaks mit einer Pseudo-Voigt-Funktion zu fitten. Als Anfangsfitwert für den Gitterparameter wird hierbei der Literaturwert $a = \SI{5,64}[]{\angstrom}$ verwendet. Peaknummer, händisch bestimme Peaklage $2\theta_{[Auge]}$, gefittet Peaklage $2\theta_{[Fit]}$ sowie die Halbwertsbreite sind in Tabelle~\ref{tab:peaks} dargestellt.
+Mithilfe der Software Jana2020~\footnote{Institute of Physics,Department of StructureAnalysis, Cukrovarnicka 10, 16253 Praha 6, Czech Republic} wird nun probiert, die Peaks mit einer Pseudo-Voigt-Funktion zu fitten. Als Anfangsfitwert für den Gitterparameter wird hierbei der Literaturwert $a = \SI{5,64}[]{\angstrom}$ verwendet. Peaknummer, händisch bestimme Peaklage $2\theta_{[Auge]}$, gefittete Peaklage $2\theta_{[Fit]}$ sowie die Halbwertsbreite sind in Tabelle~\ref{tab:peaks} dargestellt.
+Der Fehler der händisch bestimmten Peaks wrid hierbei je nach Deutlichkeit dessen Position im Spektrum abgeschätzt. Die Fehler der gefitteten Peakpositionen sowie der Fehler der Halbwertsbreite wird auf die Hälfte der kleinsten Skaleneinheit des Plots im Fitprogramm geschätzt.
 
 
 \begin{table}[h!]
@@ -40,11 +41,11 @@ Mithilfe der Software Jana2020 \footnote[1]{Institute of Physics,Department of S
      13 & \num{110,80(0,03)} & \num{110,955(0,005)} & \num{0,517(0,005)} \\  [1ex] 
      \hline
      \end{tabular}
-     \caption[short]{Tabelle der Peaks mit händisch bestimmten Werten und gefitteten Werten sowie der Halbwertsbreite der gefitteten Peaks.}
+     \caption[short]{Tabelle der Peaks mit händisch bestimmten Werten und gefitteten Werten sowie der Halbwertsbreite der gefitteten Peaks. Bei den Peaks 4, 7, 10 und 12 war wie im Text erklärt kein Fit möglich.}
      \label{tab:peaks}
 \end{table}
 
-Hierbei wird ersichtlich, dass nicht für alle Peaks ein sinnvoller Fit möglich war. Ebenso war die integrierte Intensität mit der Software nicht möglich und auch ansonsten sehr komplex und aufwändig. Daher wird hier auf eine Diskussion der Intensitäten verzichtet.
+Hierbei wird ersichtlich, dass nicht für alle Peaks ein sinnvoller Fit möglich war. Es wurde nur ein solcher Fit verwendet, dessen Peakposition bis auf einen Fehler mit der Peakposition des gemessenen Spektrums übereinstimmt. Ebenso war die integrierte Intensität mit der Software nicht möglich und auch ansonsten sehr komplex und aufwändig. Daher wird hier auf eine quantitative Diskussion der Intensitäten verzichtet.
 
 \subsubsection{Gitterparameter und Diskussion}
 
@@ -71,22 +72,23 @@ Die Ergebnisse für den Netzabstand $d_{hkl}$, deren quadrierten Sinus des Beugu
      \hline
      Peak-Nr. & $2\theta_{[Fit]}$ & $d/\si{\angstrom}$ & $\sin^2(\theta)$ & $\frac{\lambda^2}{4a^2}$ & $(h^2+k^2+l^2)$ & $a/\si{\angstrom}$ &  $h k l $ \\ [0.5ex] 
      \hline\hline
-     1 & \num{27,518(0,005)} & 3,2387 & 0,056568 & 0,018856 & 3 & 5,6096 & 1 1 1 \\
-     2 & \num{31,881(0,005)} & 2,8048 & 0,075424 & 0,018856 & 4 & 5,6096 & 2 0 0 \\
-     3 & \num{45,709(0,005)} & 1.9833 & 0.150849 & 0,018856 & 8 & 5,6096 & 2 2 0 \\
-     5 & \num{56,808(0,005)} & 1.6194 & 0.226273 & 0,018856 & 12 & 5,6096 & 2 2 2 \\ 
-     6 & \num{66,634(0,005)} & 1.4024 & 0.301698 & 0,018856 & 16 &  5,6096 & 0 0 4\\
-     8 & \num{75,774(0,005)} & 1.2543 & 0.377122 & 0,018856 & 20 &  5,6096 & 2 0 4\\
-     9 & \num{84,554(0,005)} & 1.1451  &  0.452546 & 0,018856 & 24 &  5,6096 & 2 2 4\\
-     11 & \num{101,934(0,005)} & 0.9916 & 0.603395 & 0,018856 & 32 &  5,6096 & 4 0 4\\
-     13 & \num{110,955(0,005)} & 0.9349 & 0.678820 & 0,018856 & 36 &  5,6096 & 4 2 4\\ [1ex] 
+     1 & \num{27,518(0,005)} & 3,2387 & 0,056568 & 0,018856 & 3 & 5,6096 & (1 1 1) \\
+     2 & \num{31,881(0,005)} & 2,8048 & 0,075424 & 0,018856 & 4 & 5,6096 & (2 0 0) \\
+     3 & \num{45,709(0,005)} & 1,9833 & 0,150849 & 0,018856 & 8 & 5,6096 & (2 2 0) \\
+     5 & \num{56,808(0,005)} & 1,6194 & 0,226273 & 0,018856 & 12 & 5,6096 & (2 2 2) \\ 
+     6 & \num{66,634(0,005)} & 1,4024 & 0,301698 & 0,018856 & 16 &  5,6096 & (0 0 4)\\
+     8 & \num{75,774(0,005)} & 1,2543 & 0,377122 & 0,018856 & 20 &  5,6096 & (2 0 4)\\
+     9 & \num{84,554(0,005)} & 1,1451  &  0,452546 & 0,018856 & 24 &  5,6096 & (2 2 4)\\
+     11 & \num{101,934(0,005)} & 0,9916 & 0,603395 & 0,018856 & 32 &  5,6096 & (4 0 4)\\
+     13 & \num{110,955(0,005)} & 0,9349 & 0,678820 & 0,018856 & 36 &  5,6096 & (4 2 4)\\ [1ex] 
      \hline
      \end{tabular}
-     \caption[short]{Tabelle mit den berechneten Werten für den Netzabstand $d_{hkl}$, dem quadrierten Sinus des Beugungswinkels des jeweiligen Peaks, der Konstante $\nicefrac[]{\lambda^2}{4a^2}$ und dem Gitterparameter $a$. Ebenso werden die Millerschen Indizes für den jeweiligen Peak angegeben. In der Tabelle sind nur die Peaks, für die ein Fit möglichm war.}
+     \caption[short]{Tabelle mit den berechneten Werten für den Netzabstand $d_{hkl}$, dem quadrierten Sinus des Beugungswinkels des jeweiligen Peaks, der Konstante $\nicefrac[]{\lambda^2}{4a^2}$ und dem Gitterparameter $a$. Ebenso werden die Millerschen Indizes für den jeweiligen Peak angegeben. In der Tabelle sind nur die Peaks erwähnt, für die ein Fit möglich war.}
      \label{tab:gitter}
 \end{table}
 
-Wie man sieht, ist der Gitterparameter $a$ für alle Peaks gleich. Dies liegt natürlich auch an der Natur des Fits, welcher den Gitterparamter berechnet, für den die Abweichungen der gemessenen Werte von den theoretisch bewerteten Werten minimal sind. Daher ist die Mittelwertbildung hier überflüssig, eher kann man direkt den berechneten Wert für $a$ nehmen, den Jana2020 berechnet. Hiermit ergibt sich:
+Die Konstante $\nicefrac[]{\lambda^2}{4a^2}$ ist hierbei für alle Peaks gleich, was auch zu erwarten ist.
+Ebenso ist erkennbar, dass der Gitterparameter $a$ für alle Peaks gleich ist. Dies liegt natürlich auch an der Natur des Fits, welcher den Gitterparamter berechnet, für den die Abweichungen der gemessenen Werte von den theoretisch bewerteten Werten minimal sind. Daher ist die Mittelwertbildung hier überflüssig, eher kann man direkt den berechneten Wert für $a$ nehmen, den Jana2020 berechnet. Hiermit ergibt sich, wobei der Fehler die Fitabweichung von Jana2020 ist:
 
 \begin{equation}
     a = \SI{5,6096(0,0005)}{\angstrom}
@@ -102,10 +104,10 @@ Damit können nun auch die Netzabstände mithilfe Gl.~\ref{eq:netzabstand} für 
      \hline
      Peak-Nr. & $2\theta_{[Auge]}$ & $d/\si{\angstrom}$ & $\sin^2(\theta)$ & $(h^2+k^2+l^2)$&  $h k l $ \\ [0.5ex] 
      \hline\hline
-     4 & \num{54,18(0,03)} & 1.6914 & 0.207380 & 11 & 1 1 3 \\
-     7 & \num{73,75(0,05)} & 1.2869 & 0.360085 & 19 & 3 1 3\\
-     10 & \num{89,52(0,05)}  & 1.0796 & 0.495811 & 27 & 3 3 3 \\
-     12 & \num{108,51(0,05)} & 0.9482 & 0.658735 & 35 & 3 1 5 \\
+     4 & \num{54,18(0,03)} & 1,6914 & 0,207380 & 11 & (1 1 3) \\
+     7 & \num{73,75(0,05)} & 1,2869 & 0,360085 & 19 & (3 1 3)\\
+     10 & \num{89,52(0,05)}  & 1,0796 & 0,495811 & 27 & (3 3 3) \\
+     12 & \num{108,51(0,05)} & 0,9482 & 0,658735 & 35 & (3 1 5) \\
      [1ex] 
      \hline
      \end{tabular}
