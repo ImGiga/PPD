@@ -1,1 +1,44 @@
 \section{\label{sec:aufbau}Aufbau und Durchführung} %evtl. Protokoll jeweils in Anhang
+\subsection{Probenpräparation}
+Die Probenpräparation erfolgt in zwei Schritten, wobei genau der Anleitung~\cite[]{Anleitung} gefolgt wird. Zuerst werden die Substrate, auf denen der Film aufgebracht wird, in $\SI{25}{\milli\metre}$ x $\SI{15}{\milli\metre}$ große Rechtecke zugeschnitten und anschließend in einem Ultraschallbad zuerst mit Alconox in VE-Wasser und anschließend in Isopropanol in VE-Wasser für jeweils 10 Minuten gereinigt.
+
+In einem zweiten Schritt wird nun die Polymerlösung Polystyrol (PS) in Chlorbenzol (CB) angesetzt. Hierfür werden 5 Polystyrolkugeln, was einer Masse von 
+\begin{equation*}
+    m_{Poly} = \SI{313,23(2)}{\milli\gram}
+\end{equation*}
+entspricht, anfangs in
+\begin{equation*}
+    V_{CB} = \SI{1044}{\micro\litre}
+\end{equation*}
+gelöst, um die erste Konzentration $c_1 = \SI{300}{\milli\gram\per\milli\litre}$ zu erhalten. Für die weiteren Konzentrationen wird nun eine neue Stammlösung mit $c_{Stamm} = \SI{250}{\milli\gram\per\milli\litre}$ durch Verdünnen der ersten Konzentration hergestellt. Dafür wurden $V = \SI{250}{\micro\litre}$ der Ursprungslösung für Messungen mit $c_1$ abgesondert und der Rest mit weiteren $v = \SI{158,8}{\micro\litre}$ Chlorbenzol verdünnt. Anschließend wurden die anderen benötigten Konzentrationen ausgehend von der neuen Stammlösung hergestellt und sind in Tab.~\ref{tab:verduennen} dargestellt.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Nummer & $c$ in \si{\milli\gram\per\milli\litre} & $V_{Stamm}$ in \si{\micro\litre} & $V_{CB}$ in \si{\micro\litre} \\ [0.5ex]
+        \hline \hline
+        $c_2$ & 250 & 250 & 0\\
+        $c_3$ & 200 & 200 & 50\\
+        $c_4$ & 150 & 150 & 100\\
+        $c_5$ & 100 & 100 & 150\\
+        $c_6$ & 50 & 50 & 200\\
+        $c_7$ & 25 & 25 & 225\\ [1ex]
+        \hline
+    \end{tabular}
+    \caption{Präparierte Konzentrationen und die dazu benötigten Volumina der Stammlösung mit $c_{Stamm} = \SI{250}{\milli\gram\per\milli\litre}$ sowie Chlorbenzol.}
+    \label{tab:verduennen}
+\end{table}
+
+Ausgehend von der letzten Konzentration $c_7$ wird noch eine weitere Lösung mit $c_8 = \SI{1}{\milli\gram\per\milli\litre}$ hergestellt, indem $V = \SI{20}{\micro\litre}$ der Lösung $c_7$ abgesondert und mit $V_{CB} = \SI{480}{\micro\litre}$ verdünnt wird. Nur hier ist das Gesamtvolumen aus präparationstechnischen Gründen $V_{Ges} = \SI{500}{\micro\litre}$, ansonsten ist es immer $V_{Ges} = \SI{250}{\micro\litre}$.
+
+
+Anschließend wird eine Reihe von Filmen mit dem Spincoater bei $\omega = 1000$ rpm bei einer Rotationszeit von $\SI{60}{\second}$ präpariert. Hierfür werden jeweils etwa $\SI{100}{\micro\litre}$ der Polymerlösung mit einer Pipette auf ein Substrat auf dem Spincoater gebracht. Das gesamte Substrat wird mit einer Bewegung benetzt, wobei darauf geachtet wird, es nicht zu berühren. Der Deckel wird nach Aufbringung direkt geschlossen und der Spincoter gestartet.\\
+Die zweite Präparationsreihe mit konstanter Konzentration und variabler Rotationsgeschwindigkeit des Spincoaters wird nicht durchgeführt, stattdessen werden uns später die Daten für die Auswertung zur Verfügung gestellt. 
+
+
+\subsection{Vermessung der Proben}
+Auch hier wird genau der Anleitung~\cite[]{Anleitung} gefolgt. Die Proben werden nun via Weißlichtreflektometrie veremssen, wobei die Software Nanocalc verwendet wird, welche einem direkt die berechnete Schichtdicke sowie die Fitgüte berechnet. All diese Größen werden jeweils abgespeichert. 
+Zuerst wird ein Dunkelspektrum aufgenommen und eine Referenzprobe vermessen.
+Jede der 8 präparierten Proben wird nun jeweils an 6 verschiedenen Stellen per Reflektionsspektroskopie vermessen. Hierbei wird darauf geachtet, dass die Proben nicht berührt werden. Vor jeder neuen Probe wird erneut ein Referenzspektrum aufgenommen. Wenn ein Fit glückt wird die Messung gespeichert, wobei die Grenzen der Fitparameter händische so weit variiert werden können, dass ein Fit bestmöglich funktioniert. 
+Dieses Prozedere wird anschließend ebenso für die Transmissionsmessung durchgeführt, wobei anfangs ein neues Dunkelspektrum aufgenommen wird. Das Referenzspektrum wird wieder vor jeder neuen Probe aufgenommen.

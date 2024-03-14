@@ -22,7 +22,7 @@ chunks_refl = [files_refl[i:i+6] for i in range(0, len(files_refl), 6)]
 
 fig_counter = 1
 
-fig, axs = plt.subplots(2, 4, figsize=(20, 10))  # Create a 2x4 grid of subplots
+fig, axs = plt.subplots(8, 1, figsize=(8,10))  # Create a 2x4 grid of subplots
 axs = axs.ravel()  # Flatten the array of axes
 
 for i, chunk in enumerate(chunks_refl, start=1):
@@ -31,13 +31,13 @@ for i, chunk in enumerate(chunks_refl, start=1):
     for file in chunk:
         data = np.loadtxt(file, delimiter=',')
         title = file.split('_')[0] 
-        axs[i-1].plot(data[:,0], data[:,1], label='Messung ' + str(i), alpha=0.3)
+        axs[i-1].plot(data[:,0], data[:,1], alpha=0.3)
         all_y_values.append(data[:,1])  # Append y-values to the list
     mean_y_values = np.mean(all_y_values, axis=0)  # Calculate the mean y-value for each x-value
-    axs[i-1].plot(data[:,0], mean_y_values, label='Mean', color='black')  # Plot the mean on each subplot
+    axs[i-1].plot(data[:,0], mean_y_values, color='black')  # Plot the mean on each subplot
     axs[i-1].set_xlabel('Wellenlänge [nm]')
     axs[i-1].set_ylabel('Reflektion [%]')
-    axs[i-1].legend()
+    # axs[i-1].legend()
     axs[i-1].set_title(title)
 
 plt.tight_layout()
@@ -52,7 +52,7 @@ files_trans = sorted(glob.glob('*rpm_trans*.xy'), key=sort_key_rot)
 
 chunks_trans = [files_trans[i:i+6] for i in range(0, len(files_trans), 6)]  
 
-fig, axs = plt.subplots(2, 4, figsize=(20, 10))  # Create a 2x4 grid of subplots
+fig, axs = plt.subplots(8,1, figsize=(8, 10))  # Create a 2x4 grid of subplots
 axs = axs.ravel()  # Flatten the array of axes
 
 for i, chunk in enumerate(chunks_trans, start=1):
@@ -61,13 +61,13 @@ for i, chunk in enumerate(chunks_trans, start=1):
     for file in chunk:
         data = np.loadtxt(file, delimiter=',')
         title = file.split('_')[0] 
-        axs[i-1].plot(data[:,0], data[:,1], label='Messung ' + str(i), alpha=0.3)
+        axs[i-1].plot(data[:,0], data[:,1], alpha=0.3)
         all_y_values.append(data[:,1])  # Append y-values to the list
     mean_y_values = np.mean(all_y_values, axis=0)  # Calculate the mean y-value for each x-value
-    axs[i-1].plot(data[:,0], mean_y_values, label='Mean', color='black')  # Plot the mean on each subplot
+    axs[i-1].plot(data[:,0], mean_y_values, color='black')  # Plot the mean on each subplot
     axs[i-1].set_xlabel('Wellenlänge [nm]')
     axs[i-1].set_ylabel('Transmission [%]')
-    axs[i-1].legend()
+    # axs[i-1].legend()
     axs[i-1].set_title(title)
 
 plt.tight_layout()
@@ -82,7 +82,7 @@ files_conc_refl = sorted(glob.glob('*mg_ml*.xy'), key=sort_key_conc)
 
 chunks_conc_refl = [files_conc_refl[i:i+6] for i in range(0, len(files_conc_refl), 6)]
 
-fig, axs = plt.subplots(2, 4, figsize=(20, 10))  # Create a 2x4 grid of subplots
+fig, axs = plt.subplots(8, 1, figsize=(8, 10))  # Create a 2x4 grid of subplots
 axs = axs.ravel()  # Flatten the array of axes
 
 for i, chunk in enumerate(chunks_conc_refl, start=1):
@@ -91,13 +91,13 @@ for i, chunk in enumerate(chunks_conc_refl, start=1):
     for file in chunk:
         data = np.loadtxt(file, delimiter=',')
         title = file.split('_')[0] 
-        axs[i-1].plot(data[:,0], data[:,1], label='Messung ' + str(i), alpha=0.3)
+        axs[i-1].plot(data[:,0], data[:,1], alpha=0.3)
         all_y_values.append(data[:,1])  # Append y-values to the list
     mean_y_values = np.mean(all_y_values, axis=0)  # Calculate the mean y-value for each x-value
-    axs[i-1].plot(data[:,0], mean_y_values, label='Mean', color='black')  # Plot the mean on each subplot
+    axs[i-1].plot(data[:,0], mean_y_values, color='black')  # Plot the mean on each subplot
     axs[i-1].set_xlabel('Wellenlänge [nm]')
     axs[i-1].set_ylabel('Reflektion [%]')
-    axs[i-1].legend()
+    # axs[i-1].legend()
     axs[i-1].set_title(title + '/mL')
 
 plt.tight_layout()
@@ -112,7 +112,7 @@ files_conc_trans = sorted(glob.glob('*mg_ml.xy'), key=sort_key_conc)
 
 chunks_conc_trans = [files_conc_refl[i:i+6] for i in range(0, len(files_conc_refl), 6)]
 
-fig, axs =  plt.subplots(2, 4, figsize=(20, 10))  # Create a 2x4 grid of subplots
+fig, axs =  plt.subplots(8, 1, figsize=(8, 10))  # Create a 2x4 grid of subplots
 axs = axs.ravel()  # Flatten the array of axes
 
 for i, chunk in enumerate(chunks_conc_trans, start=1):
@@ -121,13 +121,13 @@ for i, chunk in enumerate(chunks_conc_trans, start=1):
     for file in chunk:
         data = np.loadtxt(file, delimiter=',')
         title = file.split('_')[0] 
-        axs[i-1].plot(data[:,0], data[:,1], label='Messung ' + str(i), alpha=0.3)
+        axs[i-1].plot(data[:,0], data[:,1], alpha=0.3)
         all_y_values.append(data[:,1])  # Append y-values to the list
     mean_y_values = np.mean(all_y_values, axis=0)  # Calculate the mean y-value for each x-value
-    axs[i-1].plot(data[:,0], mean_y_values, label='Mean', color='black')  # Plot the mean on each subplot
+    axs[i-1].plot(data[:,0], mean_y_values, color='black')  # Plot the mean on each subplot
     axs[i-1].set_xlabel('Wellenlänge [nm]')
     axs[i-1].set_ylabel('Transmission [%]')
-    axs[i-1].legend()
+    # axs[i-1].legend()
     axs[i-1].set_title(title + '/mL')
 
 plt.tight_layout()
