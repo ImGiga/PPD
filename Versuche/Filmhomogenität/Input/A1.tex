@@ -1,22 +1,22 @@
 \subsection{Einfluss der Messmethode (Reflexion/Transmission) \label{sec:einflussmethode}}
 
-Als erstes werden die gemessenen Transmissions- und Reflexionsverläufe sowohl für die Messungen mit variabler Konzentration als auch für die Messungen mit variabler Rotationsgeschwindigkeit in Abb.~\ref{fig:rpm_spektren} graphisch dargestellt. 
+Als erstes werden die gemessenen Transmissions- und Reflexionsverläufe sowohl für die Messungen mit variabler Konzentration als auch für die Messungen mit variabler Rotationsgeschwindigkeit graphisch dargestellt. 
 
 Bei den Spektren mit variabler Konzentration in Abb.~\ref{fig:conc_spektren} fällt direkt auf, dass die Transmissionsspektren deutlich verrauschter als die Reflektionsspektren sind. Beide Spektren zeigen bei höhrerer Konzentration der PS-Kugeln eine deutliche Abnahme des Abstands zwischen den einzelnen Maxima, bei niedrigen Konzentrationen lassen sich überhaupt keine Maxima im Wellenlängenbereich mehr ausmachen. Dies lässt direkt auf eine steigende Filmdicke bei höherer Konzentration schließen, da erhöhte Reflexion in der Schicht zu verstärkter Interfernz führt.
 
-Bei unterschiedlicher Rotationsgeschwindigkeit in Abb.~\ref{fig:rpm_spektren} sieht man bei steigender Rotationsgeschwindigkeit bei beiden Messmethoden eine Abnahme der Peaks im gemessenen Wellenlängenbereich bzw.~eine Zunahme der Abstände der Peaks. Auch hier sind die Transmissionsspektren etwas verrauschter als die Relektionsspektren, jedoch weit weniger als bei den Messungen mit variabler Konzentration. Aus beiden Spektren lässt sich hier ablesen, dass die Schichtdicke bei steigener Geschwindigkeit wohl abnimmt.
+Bei unterschiedlicher Rotationsgeschwindigkeit in Abb.~\ref{fig:rpm_spektren} sieht man bei steigender Rotationsgeschwindigkeit bei beiden Messmethoden eine Abnahme der Peaks im gemessenen Wellenlängenbereich bzw.~eine Zunahme der Abstände der Peaks. Auch hier sind die Transmissionsspektren etwas verrauschter als die Relektionsspektren, jedoch weit weniger als bei den Messungen mit variabler Konzentration. Aus beiden Spektren lässt sich hier schon ablesen, dass die Schichtdicke bei steigender Geschwindigkeit wohl abnimmt.
 
 \begin{figure}[h!]
     \centering
     \begin{subfigure}{.5\textwidth}
       \centering
-      \includegraphics[width=.8\linewidth]{refl_conc.png}
+      \includegraphics[width=.95\linewidth]{refl_conc.png}
       \caption{Reflektionsspektren}
       \label{fig:refl_conc}
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
       \centering
-      \includegraphics[width=.8\linewidth]{trans_conc.png}
+      \includegraphics[width=.95\linewidth]{trans_conc.png}
       \caption{Transmissionsspektren}
       \label{fig:refl_trans}
     \end{subfigure}
@@ -28,13 +28,13 @@ Bei unterschiedlicher Rotationsgeschwindigkeit in Abb.~\ref{fig:rpm_spektren} si
     \centering
     \begin{subfigure}{.5\textwidth}
       \centering
-      \includegraphics[width=.8\linewidth]{refl_rpm.png}
+      \includegraphics[width=.95\linewidth]{refl_rpm.png}
       \caption{Reflektionsspektren}
       \label{fig:refl_rpm}
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
       \centering
-      \includegraphics[width=.8\linewidth]{trans_rpm.png}
+      \includegraphics[width=.95\linewidth]{trans_rpm.png}
       \caption{Transmissionsspektren}
       \label{fig:trans_rpm}
     \end{subfigure}
@@ -89,27 +89,27 @@ mit $<d>$ dem Mittelwert der Schichtdicke $d$ und $std(d)$ der Standardabweichun
     \end{table}
 
 In den Tabellen \ref{tab:rpm_val} und \ref{tab:conc_val} sind die berechneten Werte für die Filmdicke, die Standardabweichung, die Heterogenität und die Fitgüte für die Messungen mit variabler Rotationsgeschwindigkeit und variabler Konzentration aufgelistet. Die Fitgüte $\chi$ ist hierbei ein Maß für die Güte des Fits der gemessenen Spektren mit den theoretischen Spektren. Je kleiner der Wert, desto besser ist der Fit.
-Bei beiden Messreihen liegen die Mittelwerte der Schichtdicken für beide Messmethoden in einem ähnlichen Bereich. Bei den Messungen mit unterschiedlicher Rotationsgeschwindigkeit lässt sich dies auch für die Standardabweichungen und Heterogenität sagen, bei den konzentrationsvarrierten Messungen gibt es jedoch sehr große Abweichungen bei den beiden Größen. Insgesamt kann man also sagen, dass unsere Proben sehr unterschiedlich homogen sind, wobei es auch eher unhomogene Proben zu geben scheint.
+Bei beiden Messreihen liegen die Mittelwerte der Schichtdicken für beide Messmethoden in einem ähnlichen Bereich. Bei den Messungen mit unterschiedlicher Rotationsgeschwindigkeit lässt sich dies auch für die Standardabweichungen und Heterogenität sagen, bei den konzentrationsvariierten Messungen gibt es jedoch sehr große Abweichungen bei den beiden Größen. Insgesamt kann man also sagen, dass unsere Proben sehr unterschiedlich homogen sind, wobei es auch merkbar unhomogene Proben zu geben scheint.
 Es ist kein klarer Trend erkennbar, ob die Reflektions- oder Transmissionsmessung zu besseren Ergebnissen führt. Dies bestätigt sich auch bei einem Plot der Fitgüte gegen die Schichtdicke für beide Messreihen, dargestellt in Abb.~\ref{fig:guete_spektren}.
 
 
 
 \begin{figure}[h!]
   \centering
-  \begin{subfigure}{.4\textwidth}
+  \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{guete_dicke_rpm.png}
-    \caption{Variable Rotationsgeschwindigkeit.}
+    \caption{Variable Rotationsgeschwindigkeit}
     \label{fig:guete_rpm}
   \end{subfigure}%
-  \begin{subfigure}{.4\textwidth}
+  \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{guete_dicke_conc.png}
-    \caption{Variable Konzentration.}
+    \caption{Variable Konzentration}
     \label{fig:guete_conc}
   \end{subfigure}
   \caption{Schichtgüte gegen Schichtdicke für die verschiedenen Messungen. Blau sind die Reflektions-, rot die Transmissionsmessungen.}
   \label{fig:guete_spektren}
 \end{figure}
 
-Bei einer Veränderung der Rotationsgeschwindigkeit scheint die Fitgüte bei den Transmissionsmessungen höher zu sein, bei Veränderung der Konzentrationen eher andersherum, wenn auch weniger deutlich. Insgesamt lässt sich keine messmethode als klar besser identifizieren.
+Bei einer Veränderung der Rotationsgeschwindigkeit scheint die Fitgüte bei den Transmissionsmessungen höher zu sein, bei Veränderung der Konzentrationen eher andersherum, wenn auch weniger deutlich. Bei beiden Messreihen lässt sich aber keine Tendenz feststellen, wie die Fitgüten jeweils skalieren. Es lässt sich keine Messmethode als klar besser identifizieren, die Reflektionsmethode führt insgesamt jedoch zu weniger verrauschten Spektrenund zu leicht besseren Fitgüten und ist damit im Zweifel wohl vorzuziehen.
