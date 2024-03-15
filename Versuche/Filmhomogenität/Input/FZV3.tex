@@ -6,10 +6,10 @@ Wir starten mit der allgemeinen Definition der betrachteten E-Felder
     \hspace{1.5cm}\mathbf{E}_{\text{t},0}e^{i\left(\mathbf{k}_{\text{t}}\cdot \mathbf{r}-\omega_{\text{t}} t\right)},
 \end{equation}
 wobei die tiefgestellten Indices für das initial (i), reflected (r) und transmitted (t)
-Feld stehen. 
-Im betrachteten Beispiel läuft die einfallende Welle von negativer $x$-Richtung in Medium 1, bis zur Grenzfläche 
-bei $x=0$, wo sie teilweise reflektiert und ins Medium 2 transmittiert wird.  
-Allgemein lassen sich die jeweiligen magnetischen Feldstärken herleiten, wobei folgender 
+Feld stehen.
+Im betrachteten Beispiel läuft die einfallende Welle von negativer $x$-Richtung in Medium 1, bis zur Grenzfläche
+bei $x=0$, wo sie teilweise reflektiert und ins Medium 2 transmittiert wird.
+Allgemein lassen sich die jeweiligen magnetischen Feldstärken herleiten, wobei folgender
 Zusammenhang gilt
 \begin{equation}
     \mathbf{H} = \frac{\mathbf{k}\times \mathbf{E}}{k\,Z}e^{i\left(\mathbf{k}\cdot \mathbf{r}-\omega t\right)}.
@@ -18,35 +18,35 @@ Dabei beschreibt $Z_{j}$ den Wellenwiederstand des Mediums $j$, für welchen fol
 \begin{equation}\label{eq:wellwi}
     Z = \sqrt{\frac{\mu_{0}\mu_{\text{r}}}{\epsilon_{0}\epsilon_{\text{r}}}} = Z_{0}\frac{\mu_{\text{r}}}{\tilde{n}}.
 \end{equation}
-Aus der Stetigkeit der Tangentialkomponenten beider Felder folgt zunächst 
+Aus der Stetigkeit der Tangentialkomponenten beider Felder folgt zunächst
 $\omega_{\text{i}} = \omega_{\text{r}} = \omega_{\text{t}}$, zudem Erhalten wir für die Tangentialkomponenten
 \begin{align}
-    \mathbf{E}_{\text{tang, 1}} &= \left(\mathbf{n}\times\left(\mathbf{E}_{\text{i}} + \mathbf{E}_{\text{r}}\right)\right)\times \mathbf{n} 
-    = \left(\mathbf{n}\times\left(\mathbf{E}_{\text{t}}\right)\right)\times \mathbf{n} = \mathbf{E}_{\text{tang, 2}} \label{eq:stet1}\\
-    \mathbf{H}_{\text{tang, 1}} &= \left(\mathbf{n}\times\left(\mathbf{H}_{\text{i}} + \mathbf{H}_{\text{r}}\right)\right)\times \mathbf{n} 
+    \mathbf{E}_{\text{tang, 1}} & = \left(\mathbf{n}\times\left(\mathbf{E}_{\text{i}} + \mathbf{E}_{\text{r}}\right)\right)\times \mathbf{n}
+    = \left(\mathbf{n}\times\left(\mathbf{E}_{\text{t}}\right)\right)\times \mathbf{n} = \mathbf{E}_{\text{tang, 2}} \label{eq:stet1}        \\
+    \mathbf{H}_{\text{tang, 1}} & = \left(\mathbf{n}\times\left(\mathbf{H}_{\text{i}} + \mathbf{H}_{\text{r}}\right)\right)\times \mathbf{n}
     = \left(\mathbf{n}\times\left(\mathbf{H}_{\text{t}}\right)\right)\times \mathbf{n} = \mathbf{H}_{\text{tang, 2}}. \label{eq:stet2}
 \end{align}
-Nutzt man zusätzlich $\mathbf{n} = \mathbf{e}_{x}$, sowie 
-$\mathbf{e}_{k,\,\text{i}} = \mathbf{k}_{\text{i}} / k_{\text{i}} = -\mathbf{e}_{k,\,\text{r}} = -\mathbf{e}_{x}$, 
+Nutzt man zusätzlich $\mathbf{n} = \mathbf{e}_{x}$, sowie
+$\mathbf{e}_{k,\,\text{i}} = \mathbf{k}_{\text{i}} / k_{\text{i}} = -\mathbf{e}_{k,\,\text{r}} = -\mathbf{e}_{x}$,
 so folgt
 \begin{alignat}{3}
-    \mathbf{E}_{\text{i}} &= \mathbf{E}_{\text{i},0}e^{i\left(k^{(x)}_{\text{i}}x-\omega t\right)}
-    \hspace{0.8cm}&&\mathbf{E}_{\text{r}} = \mathbf{E}_{\text{r},0}e^{-i\left(k^{(x)}_{\text{i}}x-\omega t\right)}
-    \hspace{0.8cm}&&\mathbf{E}_{\text{t}} = \mathbf{E}_{\text{t},0}e^{i\left(k^{(x)}_{\text{t}}x-\omega t\right)} \\
-    \mathbf{H}_{\text{i}} &= \frac{1}{Z_{1}}\mathbf{e}_{x}\times\mathbf{E}_{\text{i},0}e^{i\left(k^{(x)}_{\text{i}}x-\omega t\right)}
-    \hspace{0.8cm}&&\mathbf{H}_{\text{r}} = \frac{-1}{Z_{1}}\mathbf{e}_{x}\times\mathbf{E}_{\text{r},0}e^{-i\left(k^{(x)}_{\text{i}}x-\omega t\right)}
-    \hspace{0.8cm}&&\mathbf{H}_{\text{t}} = \frac{1}{Z_{2}}\mathbf{e}_{x}\times\mathbf{E}_{\text{t},0}e^{i\left(k^{(x)}_{\text{t}}x-\omega t\right)}.
+    \mathbf{E}_{\text{i}} & = \mathbf{E}_{\text{i},0}e^{i\left(k^{(x)}_{\text{i}}x-\omega t\right)}
+    \hspace{0.8cm}        &                                                                                                            & \mathbf{E}_{\text{r}} = \mathbf{E}_{\text{r},0}e^{-i\left(k^{(x)}_{\text{i}}x-\omega t\right)}
+    \hspace{0.8cm}        &                                                                                                            & \mathbf{E}_{\text{t}} = \mathbf{E}_{\text{t},0}e^{i\left(k^{(x)}_{\text{t}}x-\omega t\right)}                                      \\
+    \mathbf{H}_{\text{i}} & = \frac{1}{Z_{1}}\mathbf{e}_{x}\times\mathbf{E}_{\text{i},0}e^{i\left(k^{(x)}_{\text{i}}x-\omega t\right)}
+    \hspace{0.8cm}        &                                                                                                            & \mathbf{H}_{\text{r}} = \frac{-1}{Z_{1}}\mathbf{e}_{x}\times\mathbf{E}_{\text{r},0}e^{-i\left(k^{(x)}_{\text{i}}x-\omega t\right)}
+    \hspace{0.8cm}        &                                                                                                            & \mathbf{H}_{\text{t}} = \frac{1}{Z_{2}}\mathbf{e}_{x}\times\mathbf{E}_{\text{t},0}e^{i\left(k^{(x)}_{\text{t}}x-\omega t\right)}.
 \end{alignat}
-Nutzt man nun die Stetigkeitsbedingungen aus Gl.~\eqref{eq:stet1} und \eqref{eq:stet2}, die für $x=0$ gelten, sowie 
-die allgemeine Form $\mathbf{E} = \left(E^{(x)},\,E^{(y)},\,E^{(z)}\right)^{\text{T}}$, so resultieren folgende 
+Nutzt man nun die Stetigkeitsbedingungen aus Gl.~\eqref{eq:stet1} und \eqref{eq:stet2}, die für $x=0$ gelten, sowie
+die allgemeine Form $\mathbf{E} = \left(E^{(x)},\,E^{(y)},\,E^{(z)}\right)^{\text{T}}$, so resultieren folgende
 Gleichungen
 \begin{align}
-    E^{(y)}_{\text{t}} &= E^{(y)}_{\text{i}} + E^{(y)}_{\text{r}} \\
-    E^{(z)}_{\text{t}} &= E^{(z)}_{\text{i}} + E^{(z)}_{\text{r}} \\
-    E^{(y)}_{\text{t}} &= \frac{Z_{2}}{Z_{1}}\left(E^{(y)}_{\text{i}} - E^{(y)}_{\text{r}}\right) \\
-    E^{(z)}_{\text{t}} &= \frac{Z_{2}}{Z_{1}}\left(E^{(z)}_{\text{i}} - E^{(z)}_{\text{r}}\right).
+    E^{(y)}_{\text{t}} & = E^{(y)}_{\text{i}} + E^{(y)}_{\text{r}}                                  \\
+    E^{(z)}_{\text{t}} & = E^{(z)}_{\text{i}} + E^{(z)}_{\text{r}}                                  \\
+    E^{(y)}_{\text{t}} & = \frac{Z_{2}}{Z_{1}}\left(E^{(y)}_{\text{i}} - E^{(y)}_{\text{r}}\right)  \\
+    E^{(z)}_{\text{t}} & = \frac{Z_{2}}{Z_{1}}\left(E^{(z)}_{\text{i}} - E^{(z)}_{\text{r}}\right).
 \end{align}
-Elimination der transmittierten Komponente führt zu folgendem Ausdruck 
+Elimination der transmittierten Komponente führt zu folgendem Ausdruck
 (es wird nur noch $E^{(z)}$ betrachtet, da sich beide Quotienten gleichen)
 \begin{equation}
     r = \frac{E^{(z)}_{\text{r}}}{E^{(z)}_{\text{i}}} = \frac{Z_{2} - Z_{1}}{Z_{2} + Z_{1}}.
@@ -56,14 +56,14 @@ von Gl.~\eqref{eq:wellwi} in eine bekanntere Form gebracht werden
 \begin{equation}
     r = \frac{\frac{\mu_{\text{r,}2}}{\tilde{n}_{2}} - \frac{\mu_{\text{r,}1}}{\tilde{n}_{1}}}{\frac{\mu_{\text{r,}2}}{\tilde{n}_{2}} + \frac{\mu_{\text{r,}1}}{\tilde{n}_{1}}}.
 \end{equation}
-Werden unmagnetische Materialien oder solche mit sich gleichender relativer Permeabilität betrachtet, 
-so vereinfacht sich die Gleichung weiter. Die gewünschte Form erreicht man, wenn man das Medium 1 als widerstandsfrei annimmt 
+Werden unmagnetische Materialien oder solche mit sich gleichender relativer Permeabilität betrachtet,
+so vereinfacht sich die Gleichung weiter. Die gewünschte Form erreicht man, wenn man das Medium 1 als widerstandsfrei annimmt
 ($\tilde{n}_{1} = 1$)
 \begin{align}
-    r &= \frac{\frac{1}{\tilde{n}_{2}} - \frac{1}{\tilde{n}_{1}}}{\frac{1}{\tilde{n}_{2}} + \frac{1}{\tilde{n}_{1}}} \\
-    \xrightarrow[\tilde{n}_{2}=\tilde{n}]{\tilde{n}_{1}=1} &= \frac{1 - \tilde{n}}{1 + \tilde{n}} \\
-    \Rightarrow R &= rr^{*} = \left(\frac{(1 - n) + i\kappa}{(1 + n) + i\kappa}\right)\left(\frac{(1 - n) - i\kappa}{(1 + n) - i\kappa}\right) \\
-    &= \frac{(n-1)^{2} + \kappa^{2}}{(n+1)^{2} + \kappa^{2}}.
+    r                                                      & = \frac{\frac{1}{\tilde{n}_{2}} - \frac{1}{\tilde{n}_{1}}}{\frac{1}{\tilde{n}_{2}} + \frac{1}{\tilde{n}_{1}}}               \\
+    \xrightarrow[\tilde{n}_{2}=\tilde{n}]{\tilde{n}_{1}=1} & = \frac{1 - \tilde{n}}{1 + \tilde{n}}                                                                                       \\
+    \Rightarrow R                                          & = rr^{*} = \left(\frac{(1 - n) + i\kappa}{(1 + n) + i\kappa}\right)\left(\frac{(1 - n) - i\kappa}{(1 + n) - i\kappa}\right) \\
+                                                           & = \frac{(n-1)^{2} + \kappa^{2}}{(n+1)^{2} + \kappa^{2}}.
 \end{align}
 Für den Fall einen nicht senkrechten Einfalls, muss die Polarisation des Lichtes, sowie der Einfallswinkel
-berücksichtigt werden [R. Gross 3, Uni Ulm, TPC]. \\ 
+berücksichtigt werden \cite{gross,Gekle,Ulm}. \\
