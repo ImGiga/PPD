@@ -1,8 +1,8 @@
 \subsection{\label{subsec:A1}Kalibration des Spektrographen}
 Um für spätere Messungen die Pixel der CCD-Kamera einer bestimmten Wellenlänge zuordenbar zu machen, 
 muss zunächst eine Kalibration durchgeführt werden, die die Pixelposition mit bekannten 
-Referenzwellenlängen in Verbindung bringt. Hierzu wird das Licht der Deckenlampe benutzt, 
-dessen Spektrum bekannt und in Abb.~A1 der Versuchsanleitung dargestellt ist.
+Referenzwellenlängen in Verbindung bringt. Hierzu wird das Licht der Deckenlampe (Hg-Entladungslampe mit Leuchtstoff) 
+benutzt, dessen Spektrum bekannt und in Abb.~A1 der Versuchsanleitung dargestellt ist.
 Zur Messung des Spektrums wird der Gittermodus im Spektrographen eingestellt und die Zentralwellenlänge auf 
 $\lambda = 600\,\si{nm}$ gesetzt. Die Belichtungszeit der Kamerapixel beträgt $t = 500\,\si{ms}$. 
 Die Spaltbreite des Spektrographen wird so eingestellt, dass am Live-Bild der Kamera die erwarteten Linien
@@ -25,8 +25,9 @@ und der kalibrierten Wellenlänge ist in Abb.~\ref{fig:kalib} dargestellt.
     (Kontrast und Farbschema), wobei Letzteres keinen Einfluss auf die Auswertung hat. Zur Erhaltung der Übersicht wird nur ein 
     kleiner Ausschnitt dargestellt. 
     B) Das hieraus gewonnene Spektrum des Lampenlichts. Zusätzlich sind die identifizierten Peaks, sowie deren zugehörige 
-    Wellenlänge eingezeichnet. Die x-Achse beschreibt die kalibrierte Wellenlänge. Die ersten vier Peaks sind 
-    Quecksilber-Linien, während der letzte einer Emissionslinie des Leuchtstoffes ($\text{Eu}^{3+}$) entspricht \cite{Anleitung}.}
+    Wellenlänge eingezeichnet. Die x-Achse beschreibt die kalibrierte Wellenlänge. Die mittleren drei Peaks sind 
+    Quecksilber-Linien, während die erste und letzte Emissionslinie den Leuchtstoffen $\text{Tb}^{3+}$ und 
+    $\text{Eu}^{3+}$ entspringen \cite{Anleitung}.}
 \end{figure}\FloatBarrier
 Trägt man die Pixel-Nummer $N_{\text{pixel}}$ der identifizierten Peaks 
 gegen die zugehörige Wellenlänge auf, so kann eine Gerade durch die Messpunkte gelegt 
@@ -45,7 +46,7 @@ Der zugehörige Graph ist in Abb.~\ref{fig:fit} dargestellt.
 \end{figure}\FloatBarrier
 Aus dem in Python errechneten Fit erhalten wir folgende Werte für die Parameter
 \begin{alignat}{3}
-    m &= 0.508934\,\si{nm}\hspace{2cm}& s_{m} &= 0,001556\,\si{nm}\hspace{2cm} &\Rightarrow \Aboxed{m &= (0,509\pm 0,002)\,\si{nm}} \label{eq:kali}\\
+    m &= 0.508934\,\si{\frac{nm}{px}}\hspace{2cm}& s_{m} &= 0,001556\,\si{\frac{nm}{px}}\hspace{2cm} &\Rightarrow \Aboxed{m &= (0,509\pm 0,002)\,\si{\frac{nm}{px}}} \label{eq:kali}\\
     b &= 423,263674\,\si{nm}\hspace{2cm}& s_{b} &= 0,458771\,\si{nm}\hspace{2cm} &\Rightarrow \Aboxed{b &= (423,3\pm 0,5)\,\si{nm}}.
 \end{alignat}
 Hieraus lassen sich für alle weiteren Spektren die Pixel-Messwerte in Wellenlängen umrechnen. \\
@@ -81,7 +82,9 @@ ist beispielhaft in Abb.~\ref{fig:weitfeldbild} dargestellt.
     \caption{\label{fig:weitfeldbild}Hintergrundkorregierte Weitfeldaufnahme der hergestellten 
     PBI-Probe in einer PS-Matrix. Die Kamera wird mit 2x2-Binning betrieben. Die schwarzen Balken 
     werden durch die Spalten am Spektrograph erzeugt. Zur besseren optischen Analyse wurde 
-    der Kontrast des Bildes, sowie das Farbschema verfeinert.}
+    der Kontrast des Bildes, sowie das Farbschema verfeinert.
+    Das Bild errechnet sich aus der Mittelung über 10 Bilder, die bei einer Anregungsleistung von 
+    $490\,\si{\mu W}$ und einer Belichtungszeit von $500\,\si{ms}$ aufgenommen wurden.}
 \end{figure}\FloatBarrier
 Mit dem Verschiebetisch werden nach und nach neue Positionen der Probe angefahren und eine Sequenz 
 aus 100 bis 150 Bildern aufgenommen. Nach jeder Messung wird eine Sequenz des Untergrunds bei geschlossenem 
@@ -89,7 +92,7 @@ Shutter aufgenommen. Alle Messungen werden ohne Deckenbeleuchtung und mit Lichts
 durchgeführt, um das Hintergrundsignal so klein wie möglich zu halten. Nachdem der gemittelte Untergrund 
 von jedem Bild der Sequenz abgezogen wurde, kann an einem beliebigen Pixel-Pfad in x- und y-Richtung der 
 zeitliche Verlauf der Pixelintensität (des Grauwertes) dargestellt werden. 
-Dies erlaubt die zeitaufgelöste Messung der Fluoreszenz einzelner Moleküle, 
+Dies erlaubt eine zeitaufgelöste Messung der Fluoreszenz einzelner Moleküle in etwa $0,5\,\si{s}$-Schritten, 
 wodurch Effekte wie Blinken und Photobleichen beobachtet werden können. 
 Beispielhafte Beobachtungen solcher Prozesse sind im folgenden Abschnitt präsentiert. \\
 Beschreibt man die Breite des Bildes mit einer $x$-Koordinate und die Höhe mit der $y$-Koordinate, so kann 
@@ -140,10 +143,10 @@ Der nicht emittierende Zwischenzustand kann viele Sekunden existieren,
 sodass im gemessenen Zeitintervall nicht eindeutig identifiziert werden kann, 
 ob es sich um ein blinkendes Molekül oder ein ausgeblichenes Molekül 
 handelt. Aus der Beobachtung vieler Moleküle kann jedoch abgeschätzt werden, 
-dass die Blinkzeit meist unterhalb von $35\,\si{s}$ liegt.
+dass die längste Blinkzeit meist unterhalb von $35\,\si{s}$ liegt.
 In Abb.~\ref{fig:blinken} ist für drei intensitätsstarke 
 exemplarische Moleküle das Blinken gezeigt, während 
-in Abb.~\ref{fig:sterben} Beispiele für das Photobleaching
+in Abb.~\ref{fig:sterben} vermutlich Beispiele für das Photobleaching
 dargestellt sind.
 \begin{figure}[h!]
     \centering
@@ -185,7 +188,7 @@ erfolgreich abschließen. \\
 Zur Untersuchung der Polarisationsabhängigkeit der Fluoreszenz wird der rotierende Polarisator in den 
 Strahlengang geklappt. Dieser rotiert mit einer Frequenz von $f\approx 0,15\,\si{s^{-1}}$ und 
 polarisiert das zirkulare Anregungslicht linear in Richtung seiner aktuellen Stellung. 
-Mit den gleichen Einstellungen wie in vorherigem Abschnitt und einer Anregungsleistung von $325\pm5\,\si{\mu W}$ werden 
+Mit den gleichen Einstellungen wie in vorherigem Abschnitt und einer Anregungsleistung von $\left(325\pm5\right)\,\si{\mu W}$ werden 
 Sequenzen aus 150 Bilder aufgenommen, 
 die mit einem direkt hiernach aufgenommenen Hintergrund korrigiert werden. \\
 In Abb.~\ref{fig:polari} stellen wir das Fluoreszenzsignal einiger beispielhafter Moleküle als Funktion der 
@@ -244,7 +247,7 @@ und schön und sie entsprechen den Erwartungen. \\
 Abschließend wollen wir die Spektren einzelner Moleküle betrachten und mit dem Ensemblespektrum vergleichen. 
 Hierzu wird die Weitfeldlinse entfernt und der Spektrograph im Gittermodus betrieben, wobei die 
 Zentralwellenlänge analog zur Kalibration auf $\lambda=600\,\si{nm}$ eingestellt wird. Die Anregungsleistung ist 
-auf $205\pm5\,\si{\mu W}$ reduziert und die Spaltbreite geregelt, dass die Spektren scharf erkennbar sind, 
+auf $\left(205\pm5\right)\,\si{\mu W}$ reduziert und die Spaltbreite geregelt, dass die Spektren scharf erkennbar sind, 
 was bei einer Breite von $0,3\,\si{mm}$ der Fall ist. \\
 Mit diesen Einstellungen suchen wir mithilfe des Verschiebetischs insgesamt 30 gut erkennbare Einzelmoleküle, 
 deren Signal wir für mindestens $15\,\si{s}$ (30 Bilder bei einer Belichtungszeit von $500\,\si{ms}$) aufnehmen. 
@@ -325,7 +328,7 @@ Hieraus können die Energiedifferenzen der elektronischen Zustände wie folgt be
 \end{align}
 Insgesamt erhalten wir
 \begin{equation}
-    \fbox{$\frac{\Delta{E}_{01}}{hc} = (1204\pm43)\,\si{cm^{-1}}$}\hspace{2cm}\fbox{$\frac{\Delta{E}_{12}}{hc} = (1321\pm90)\,\si{cm^{-1}}$}.
+    \text{Abstand 0-1: }\fbox{$\frac{\Delta{E}_{01}}{hc} = (120\pm4)\cdot10^{1}\,\si{cm^{-1}}$}\hspace{2cm}\text{Abstand 1-2: }\fbox{$\frac{\Delta{E}_{12}}{hc} = (132\pm9)\cdot10^{1}\,\si{cm^{-1}}$}.
 \end{equation}
 Abschließend werden in Abb.~\ref{fig:spektren} zum Zweck der besseren Visualisierung vier ausgewählte Molekülspektren dargestellt.
 Da die Spektren auf ihren jeweiligen Maximal-Intensitätswert normiert sind, wird dieser pro Spektrum angegeben, um Informationsverluste 
